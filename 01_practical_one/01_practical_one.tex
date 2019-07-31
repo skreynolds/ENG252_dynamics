@@ -1,0 +1,90 @@
+\documentclass[a4paper]{article}
+
+%------------------------------------------------------------
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{inconsolata}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{pstricks-add}
+\usepackage{siunitx}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{epstopdf} %converting to PDF
+\usepackage{hyperref}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+
+%------------------------------------------------------------
+\graphicspath{{./fig/}}
+
+%------------------------------------------------------------
+\setlength{\parindent}{0in}
+
+\lstdefinestyle{C++}{
+	language=C++,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#},
+	showstringspaces=false
+}
+
+%------------------------------------------------------------
+\newtcblisting[auto counter]{sexylisting}[2][]{sharp corners, 
+    fonttitle=\bfseries, colframe=gray, listing only, 
+    listing options={basicstyle=\ttfamily,language=C++}, 
+    title=Listing \thetcbcounter: #2, #1}
+
+%------------------------------------------------------------
+\lstset{language=C++,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue}\ttfamily,
+        stringstyle=\color{red}\ttfamily,
+        commentstyle=\color{green}\ttfamily,
+        morecomment=[l][\color{magenta}]{\#},
+        showstringspaces=false
+}
+%------------------------------------------------------------
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=3em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+%------------------------------------------------------------
+\newlength{\arrow}
+\settowidth{\arrow}{\scriptsize$1000$}
+\newcommand*{\myrightarrow}[1]{\xrightarrow{\mathmakebox[\arrow]{#1}}}
+
+%------------------------------------------------------------
+
+\begin{document}
+\title{ENG252 Dynamics: Practical 1}
+\author{Shane Reynolds}
+\maketitle
+
+\section{Introduction}
+ 
+\section{Setup}
+
+\section{Results}
+
+\section{Calculations}
+
+\section{Discussion}
+
+\section{Conclusion}
+
+\bibliography{my_bib}
+\bibliographystyle{ieeetr}
+
+\end{document}

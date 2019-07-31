@@ -1,0 +1,7 @@
+*.aux
+*.listing
+*.log
+*.gz
+*.toc
+*.blg
+*.out
