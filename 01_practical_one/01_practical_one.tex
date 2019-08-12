@@ -105,8 +105,35 @@ Once airborne, there are typically only a few forces acting on the object: force
 \end{equation}
 
 Assuming that the object trajectory does not take large excursions from the Earth's surface it is reasonable to assume that $r$ is constant, implying that the force due to gravity is also constant. If the force due to air resistance is assumed to be negligible, then the object is said to be undermoving constant acceleration $g$, which is approximately $9.81\si{\meter\per\second^2}$. A 2D orthonormal basis describing the vector space of the motion, say $\pmb{\hat{e}_x}$ and $\pmb{\hat{e}_y}$, can be aligned such that $\pmb{\hat{e}_y}$ is parallel to the direction of $g$. Under these assumptions the equations of motion describing the object trajectory can be seen in Table 1.
+\begin{table}[h]
+	\centering
+	\caption{text}
+	\begin{tabular}{ll}
+		\toprule
+		Equations of motion $(x)$ & Equations of motion $(y)$\\
+		\midrule
+		$s_x(t) = (s_0)_x + (v_0)_x t$ & $s_y(t) = (s_0)_y + (v_0)_y t -\frac{1}{2}gt^2 $ \\
+		$v_x(t) = (v_0)_x$ & $v_y(t) = (v_0)_y - gt$ \\
+		$a_x(t) = 0$ & $a_y(t) = -g$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The parametric displacement equations in Table 1 describe the trajectory of the object as it travels through the air. Letting $s_x(t) = x$ we can rearrange the horizontal displacement equation as:
+\begin{equation}
+t = \frac{x - (s_0)_x}{(v_0)_x} = \frac{1}{(v_0)_x}x - \frac{(s_0)_x}{(v_0)_x}
+\end{equation}
+
+Substituting this into the vertical displacement equation, and letting $s_y(t) = y$, we see that:
+\begin{equation}
+y = (s_0)_y + (v_0)_y \bigg(\frac{1}{(v_0)_x}x - \frac{(s_0)_x}{(v_0)_x} \bigg) -\frac{1}{2}g \bigg(\frac{1}{(v_0)_x}x - \frac{(s_0)_x}{(v_0)_x} \bigg)^2
+\end{equation}
+
+Expanding equation (7) and simplifiying results illustrates the trajectory shape in the 2D plane is quadratic.
 
 
+\subsection{Scope}
+The scope of this practical is to apply a force to a small electric car, accelerating it along a short linear track. Once the car leaves the track it will follow a quadratic trajectory.
 
 \section{Setup}
 
