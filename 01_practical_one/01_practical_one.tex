@@ -73,7 +73,40 @@
 \maketitle
 
 \section{Introduction}
-testing
+Consider an object, on Earth's surface, being launched into the air with an initial velocity at some angle with the horizontal. This very simple motion event is best analysed by considering it in two discrete parts: the object acceleration to the initial velocity; and the subsequent trajectory once the object is airborne.
+
+\subsection{Acceleration to initial velocity}
+If forces are denoted as $\pmb{F}$, acceleration as $\pmb{a}$, object mass as $m$, and time as $t$, then the object's acceleration can be modelled using the standard fare of Classical Mechanics: Newton's Second Law of Motion. This is shown in equation (1).
+\begin{equation}
+\sum \pmb{F}(t) = m \pmb{a}(t)
+\end{equation}
+
+The object could be accelerated along any curvilinear path, however, for the sake of simplicity let's assume the object is accelerated along a linear path. We note that acceleration can be formally defined as:
+\begin{equation}
+\pmb{a} = \frac{d\pmb{v}}{dt}
+\end{equation}
+
+Rearranging equation (1), substituting this into equation (2) and taking the integral of with respect to $t$, from the initial time, $t_0$, to the final time, $t$, yields the following:
+\begin{equation}
+\int_{\pmb{v_0}}^{\pmb{v}(t)} d\tilde{\pmb{v}} = \frac{1}{m}\int_{t_0}^{t} \sum \pmb{F}(\tau) d\tau
+\end{equation}
+
+Assuming that the force is constant over the duration of time $t-t_0$, equation (3) can be simplified as follows:
+\begin{equation}
+\pmb{v}(t) = \pmb{v_0} + \frac{(t-t_0)}{m} \sum \pmb{F} 
+\end{equation}
+
+If the motion is planar then equation (4) can be decomposed according to a conveniently chosen two dimensional rectilinear orthonormal basis which describes the vector space. Typically, we use $\pmb{\hat{e}_x}$, and $\pmb{\hat{e}_y}$, such that $\pmb{\hat{e}_y}$ is aligned with the force due to gravity, but any arrangement could be used.
+
+\subsection{Trajectory once airborne}
+Once airborne, there are typically only a few forces acting on the object: force due to gravity; and force opposing motion due to friction between the object and air. The force due to gravity can be calculated using another \textit{greatest hit} from the Classical Mechanics cannon: Newton's Law of Universal Gravitation. If we denote the mass of our object as $m$, the mass of the Earth as $M$, the Euclidean distance between their centres as $r$, and $G$ as a gravitational constant $6.674×10^{−11} \si{\newton(\meter\per\kilogram)^2}$ then the attractive force due to gravity is given by:
+\begin{equation}
+\pmb{F} = G \frac{m M}{r^2}
+\end{equation}
+
+Assuming that the object trajectory does not take large excursions from the Earth's surface it is reasonable to assume that $r$ is constant, implying that the force due to gravity is also constant. If the force due to air resistance is assumed to be negligible, then the object is said to be undermoving constant acceleration $g$, which is approximately $9.81\si{\meter\per\second^2}$. A 2D orthonormal basis describing the vector space of the motion, say $\pmb{\hat{e}_x}$ and $\pmb{\hat{e}_y}$, can be aligned such that $\pmb{\hat{e}_y}$ is parallel to the direction of $g$. Under these assumptions the equations of motion describing the object trajectory can be seen in Table 1.
+
+
 
 \section{Setup}
 
