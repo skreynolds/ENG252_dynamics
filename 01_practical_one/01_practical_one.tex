@@ -108,7 +108,7 @@ Once airborne, there are typically only a few forces acting on the object: force
 Assuming that the object trajectory does not take large excursions from the Earth's surface it is reasonable to assume that $r$ is constant, implying that the force due to gravity is also constant. If the force due to air resistance is assumed to be negligible, then the object is said to be undermoving constant acceleration $g$, which is approximately $9.81\si{\meter\per\second^2}$. A 2D orthonormal basis describing the vector space of the motion, say $\boldsymbol{\hat{e}_x}$ and $\boldsymbol{\hat{e}_y}$, can be aligned such that $\boldsymbol{\hat{e}_y}$ is parallel to the direction of $g$. Under these assumptions the equations of motion describing the object trajectory can be seen in Table 1.
 \begin{table}[h]
 	\centering
-	\caption{text}
+	\caption{Equations of motion governing a projectile under constant gravitation acceleration assumption, with negliglible air resistance}
 	\begin{tabular}{ll}
 		\toprule
 		Equations of motion $(x)$ & Equations of motion $(y)$\\
@@ -139,7 +139,7 @@ The scope of this practical is to apply a force to a small electric car, acceler
 \newpage
 
 \section{Setup}
-A model electric car, shown in Figure XXXX, is accelerated along a 1.4$\si{\meter}$ track by an electric dc motor. Two metal strips along the track length have a 12$\si{\volt}$ voltage potential difference applied whcih power the dc motor when two metal tabs on the car's underside touch the track conductors. The track, shown in Figure XXXX, is proped up at a known angle with an aluminium strut. Upon reaching the track termination the car is lauched into the air, at which point it continues a parabolic trajectory until it lands on a mat. The horizontal distance from the track end to the position where the car landed is measured.
+A model electric car, shown in Figure 1, is accelerated along a 1.4$\si{\meter}$ track by an electric dc motor. Two metal strips along the track length have a 12$\si{\volt}$ voltage potential difference applied whcih power the dc motor when two metal tabs on the car's underside touch the track conductors. The track, shown in Figure 2, is proped up at a known angle with an aluminium strut. Upon reaching the track termination the car is lauched into the air, at which point it continues a parabolic trajectory until it lands on a mat. The horizontal distance from the track end to the position where the car landed is measured.
 \begin{figure}[h]
 	\begin{minipage}[t]{0.45\textwidth}
 		\centering
@@ -154,7 +154,7 @@ A model electric car, shown in Figure XXXX, is accelerated along a 1.4$\si{\mete
 	\end{minipage}
 \end{figure}
 
-Towards the end of the track, a short 0.1$\si{\meter}$ section of the track is fit with a timer which trips on and off again as the car passes through. This can be seen in Figure XXXX. The timer provides a measurement of the time taken for the car to traverse the 0.1$\si{\meter}$ section of the track, allowing for the calculation of an approximate launch velocity as the car leaves the track.
+Towards the end of the track, a short 0.1$\si{\meter}$ section of the track is fit with a timer which trips on and off again as the car passes through. This can be seen in Figure 3. The timer provides a measurement of the time taken for the car to traverse the 0.1$\si{\meter}$ section of the track, allowing for the calculation of an approximate launch velocity as the car leaves the track.
 \begin{figure}[h]
 	\centering
 	\frame{\includegraphics[scale=0.05]{fig3}}
@@ -164,12 +164,12 @@ Towards the end of the track, a short 0.1$\si{\meter}$ section of the track is f
 \newpage
 
 \section{Results}
-Four different angles were selected to provide coverage of the launch angle range available. The angles, in radians, were: $\sfrac{\pi}{4}$, $\sfrac{7\pi}{36}$, $\sfrac{5\pi}{36}$, and $\sfrac{\pi}{12}$. Setting the track launch angle was not straight forward. Supporting calculations were made to confirm the launch angle. Measurements of the horizontal distance along the track base were taken. This length is shown as $T_x$ in Figure XXXX. Similarly, the launch height was also measured - this is shown as $T_y$ in Figure XXXX. To confirm the launch angle the following calculation was made using basic trigonometry:
+Four different angles were selected to provide coverage of the launch angle range available. The angles, in radians, were: $\sfrac{\pi}{4}$, $\sfrac{7\pi}{36}$, $\sfrac{5\pi}{36}$, and $\sfrac{\pi}{12}$. Setting the track launch angle was not straight forward. Supporting calculations were made to confirm the launch angle. Measurements of the horizontal distance along the track base were taken. This length is shown as $T_x$ in Figure 4. Similarly, the launch height was also measured - this is shown as $T_y$ in Figure 4. To confirm the launch angle a calculation was made using basic trigonometry:
 \begin{equation}
 \theta = \arctan\bigg(\frac{T_y}{T_x}\bigg)
 \end{equation}
 
-The calculated results can be seen in Table XXXX. The car was launched off the ramp, at each angle, four times. Each launch saw two measurements taken: the horizontal distance, $(s_f)_x$, the car travelled from the end of the ramp; the time taken, $\delta t$ ,  for the car to pass a distance of $0.1\si{\meter}$ at the end of the ramp. The tabulared results can be seen in Tables XXXX, XXXX, XXXX, and XXXX below.
+The calculated results can be seen in Table 2. The car was launched off the ramp, at each angle, four times. Each launch saw two measurements taken: the horizontal distance, $(s_f)_x$, the car travelled from the end of the ramp; the time taken, $\delta t$ ,  for the car to pass a distance of $0.1\si{\meter}$ at the end of the ramp. The tabulared results can be seen in Tables 3, 4, 5, and 6 below.
 
 \begin{figure}[h]
 	\begin{minipage}{0.45\textwidth}
@@ -181,12 +181,12 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 		\draw (1,0) arc (0:45:1);
 		\node at (0.6,0.25) {$\theta$};
 		\end{tikzpicture}
-		\caption{test}
+		\caption{The measurements $T_x$ and $T_y$ form a right angle triangle allowing for the calculation of $\theta$ using trigonometry.}
 	\end{minipage}
 	\hspace{1cm}
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{test}
+		\captionof{table}{Calculated angles, using trigonometry, are approximately the listed angles on the track setup.}
 		\begin{tabular}{rrl}
 			\toprule
 			$T_x \ [\si{\meter}]$ & $T_y \ [\si{\meter}]$ & $\theta \ [\si{\radian}]$\\
@@ -213,7 +213,7 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 			3 & 44.60 & 1.010\\
 			4 & 46.42 & 1.040\\
 			\midrule
-			Average & & \\
+			Average & 46.43 & 1.015 \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -230,7 +230,7 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 			3 & 33.68 & 1.520\\
 			4 & 34.04 & 1.525\\
 			\midrule
-			Average & & \\
+			Average & 34.64 & 1.500 \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -249,7 +249,7 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 			3 & 29.73 & 1.570\\
 			4 & 29.94 & 1.575\\
 			\midrule
-			Average & & \\
+			Average & 30.10 & 1.569 \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -266,7 +266,7 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 			3 & 26.94 & 1.410\\
 			4 & 26.92 & 1.405\\
 			\midrule
-			Average & & \\
+			Average & 26.98 & 1.423 \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -280,19 +280,25 @@ Equation (4) relies on a known force profile, applied to the object, to determin
 v_{avg} = \frac{\Delta s}{\delta t}
 \end{equation}
 
-As outlined in Section XXXX, a small device of approximately $0.1\si{\meter}$ in length measures the time taken for the car to traverse this distance. Letting $\Delta s = 0.1\si{\meter}$, and using the average times calculated in Tables XXXX, XXXX, XXXX, and XXXX for $\delta t$, we can calculate the approximate launch velocity for each of the ramp angles. The results of these calculations can be found in Table XXXX.
+As outlined in Section 2, a small device of approximately $0.1\si{\meter}$ in length measures the time taken for the car to traverse this distance. Letting $\Delta s = 0.1\si{\meter}$, and using the average times calculated in Tables 3, 4, 5, and 6 for $\delta t$, we can calculate the approximate launch velocity for each of the ramp angles. The results of these calculations can be found in Table 7.
 \begin{figure}[h]
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{text}
-		\begin{tabular}{ll}
+		\captionof{table}{Approximate launch velocity}
+		\begin{tabular}{cr}
 			\toprule
-			Angle $(\theta)$ & Velocity $(|\boldsymbol{v_0}|)$\\
+			Angle $(\theta)$ & Velocity $(|\boldsymbol{v_0}|)$ \\
+			$[\si{\radian}]$ & $[\si{\meter\per\second}]$ \\
 			\midrule
+			$\sfrac{\pi}{4}$ & 2.15 \\
+			$\sfrac{7\pi}{36}$ & 2.89 \\
+			$\sfrac{5\pi}{36}$ & 3.32 \\
+			$\sfrac{\pi}{12}$ & 3.71 \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
-	\begin{minipage}{0.45\textwidth}
+	\hspace{0.25cm}
+	\begin{minipage}{0.52\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}
@@ -313,7 +319,7 @@ As outlined in Section XXXX, a small device of approximately $0.1\si{\meter}$ in
 			\node[red,above] (b) at (1.3,5) {$\boldsymbol{v_0}$};
 			\node[above] (b) at (0.32,2.82) {$\theta$};
 		\end{tikzpicture}
-		\caption{text}
+		\caption{As the car leaves linear track it follows a parabolic trajectory with an initial height of $(s_0)_y$, and a final horizontal distance of $(s_0)_x$.}
 	\end{minipage}
 \end{figure}
 
@@ -328,7 +334,7 @@ To find a prediction of horizontal distance, $(\hat{s}_f)_x$, at the point of pr
 0 = (s_0)_y + (v_0)_y t - \frac{1}{2}gt^2
 \end{equation}
 
-Multiplying equation (XXXX) throughout by 2, and solving using the quadratic formula yields:
+Multiplying equation (12) throughout by 2, and solving using the quadratic formula yields:
 \begin{equation}
 t = \frac{2(v_0)_y \pm \sqrt{4(v_0)_y^2 + 8g(s_0)_y}}{2g}
 \end{equation} 
@@ -338,7 +344,7 @@ Noting that $2(v_0)_y < \sqrt{4(v_0)_y^2 + 8g(s_0)_y}$ and $t>0$ we can discard 
 t = \frac{2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}}{2g}
 \end{equation}
 
-To find predicted horizotal distance ${(\hat{s}_x)_f}$ we substitute the expression for time in (14) to the equation of horizontal displacement, $s_x(t)$, from Table XXXX. This will gives us the following:
+To find predicted horizotal distance ${(\hat{s}_x)_f}$ we substitute the expression for time in (14) to the equation of horizontal displacement, $s_x(t)$, from Table 1. This will gives us the following:
 \begin{equation}
 (\hat{s}_f)_x = (s_0)_x + \frac{(v_0)_x}{2g} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
@@ -348,7 +354,7 @@ Noting that, by design, our coordinate system assignment ensures that $(s_0)_x =
 (\hat{s}_f)_x = \frac{(v_0)_x}{2g} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\theta$, $\boldsymbol{v_0}$, and $(s_0)_y$. The calculation results can be seen in Table XXXX. The table also shows the measured result and the error between actual and predicted denoted as $\epsilon$.
+Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\theta$, $\boldsymbol{v_0}$, and $(s_0)_y$. The calculation results can be seen in Table 8. The table also shows the measured result and the error between actual and predicted denoted as $\epsilon$.
 \begin{table}[h]
 	\centering
 	\caption{text}
@@ -356,14 +362,18 @@ Equation (16) has been applied to each of the four launch angles. The important 
 		\toprule
 		$\theta$ & $\boldsymbol{v_0}$ & $(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $(\hat{s}_f)_x$ & $(s_f)_x$ & $\epsilon$\\
 		\midrule
+		$\sfrac{\pi}{4}$ & 2.15 & & & & & & \\
+		$\sfrac{7\pi}{36}$ & 2.89 & & & & & & \\
+		$\sfrac{5\pi}{36}$ & 3.32 & & & & & & \\
+		$\sfrac{\pi}{12}$ & 3.71 & & & & & & \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-To deterimine the final velocity prior to impact we note that we need to determine the velocity magnitude $|\boldsymbol{v_f}|$ and the angle with the horizontal $\theta$. Given we know $(v_x)_f$, and $(v_y)_f$, these variables can be determined using Pythogoras' theorem and basic trigonometry as follows:
+To deterimine the final velocity prior to impact we note that we need to determine the velocity magnitude $|\boldsymbol{v_f}|$ and the angle with the horizontal $\alpha$. Given we know $(v_x)_f$, and $(v_y)_f$, these variables can be determined using Pythogoras' theorem and basic trigonometry as follows:
 \begin{align}
 |\boldsymbol{v_f}| &= \sqrt{(v_f)_x^2 + (v_f)_y^2}\\
-\theta &= -\arctan\bigg(\frac{(v_f)_y^2}{(v_f)_x^2}\bigg)
+\alpha &= -\arctan\bigg(\frac{(v_f)_y^2}{(v_f)_x^2}\bigg)
 \end{align} 
 
 The horizontal velocity never changes since the only force acting on the car while airborne is gravity, which is orthogonal to the horizontal component of the velocity. Hence, we can write that:
@@ -371,20 +381,24 @@ The horizontal velocity never changes since the only force acting on the car whi
 (v_f)_x = (v_0)_x
 \end{equation}
 
-To find the vertical velocity on impact, the equation of vertical velocity, $v_y(t)$, can be used - this is shown in Table XXXX. The time of impact has already been expressed in equation (14). Using this with the $v_y(t)$, we can show that the horizontal welocity is given by:
+To find the vertical velocity on impact, the equation of vertical velocity, $v_y(t)$, can be used - this is shown in Table 1. The time of impact has already been expressed in equation (14). Using this with the $v_y(t)$, we can show that the horizontal welocity is given by:
 \begin{equation}
 (v_f)_y = (v_0)_y - \frac{(v_0)_x}{2} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Given that values for the initial horizontal and vertical velocities, $(v_0)_x$ and $(v_0)_y$, respectively; and the launch height, $(s_0)_y$, are known then magnitude and angle with the horizontal of the impact velocity can be calculated. The results of these calculations can be found in Table XXXX.
+Given that values for the initial horizontal and vertical velocities, $(v_0)_x$ and $(v_0)_y$, respectively; and the launch height, $(s_0)_y$, are known then magnitude and angle with the horizontal of the impact velocity can be calculated. The results of these calculations can be found in Table 9.
 
 \begin{table}[h]
 	\centering
 	\caption{text}
-	\begin{tabular}{rrrrr}
+	\begin{tabular}{rrrrrrr}
 		\toprule
-		$(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $|\boldsymbol{v_f}|$ & $\theta$\\
+		$\theta$ & $|\boldsymbol{v_0}|$ & $(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $|\boldsymbol{v_f}|$ & $\alpha$\\
 		\midrule
+		$\sfrac{\pi}{4}$ & 2.15 \\
+		$\sfrac{7\pi}{36}$ & 2.89 \\
+		$\sfrac{5\pi}{36}$ & 3.32 \\
+		$\sfrac{\pi}{12}$ & 3.71 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
