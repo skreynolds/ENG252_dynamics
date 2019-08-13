@@ -134,7 +134,7 @@ Expanding equation (7) and simplifiying results illustrates the trajectory shape
 
 
 \subsection{Scope}
-The scope of this practical is to apply a force to a small electric car, accelerating it along a short linear track. Once the car leaves the track it will follow a quadratic trajectory.
+The scope of this practical is to apply a force to a small electric car, accelerating it along a short linear track. Once the car leaves the track it will follow a quadratic trajectory. The time taken to travers 0.1$\si{\meter}$ at the end of the linear track will be measures, as well as the horizontal distance travelled by the car. The average velocity will be used as a proxy for instantaneous launch velocity, and a predicted horizontal distance will be calculated. The practical will conclude with a discussion around the reliability of predictive calculations when estimating real life projectile motion scenarios.
 
 \newpage
 
@@ -354,18 +354,18 @@ Noting that, by design, our coordinate system assignment ensures that $(s_0)_x =
 (\hat{s}_f)_x = \frac{(v_0)_x}{2g} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\theta$, $\boldsymbol{v_0}$, and $(s_0)_y$. The calculation results can be seen in Table 8. The table also shows the measured result and the error between actual and predicted denoted as $\epsilon$.
+Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\theta$, $\boldsymbol{v_0}$, and $(s_0)_y$. The calculation results can be seen in Table 8.
 \begin{table}[h]
 	\centering
-	\caption{text}
-	\begin{tabular}{rrrrrrrr}
+	\caption{Calculation of the horizontal distance travelled.}
+	\begin{tabular}{rrrrrr}
 		\toprule
-		$\theta$ & $\boldsymbol{v_0}$ & $(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $(\hat{s}_f)_x$ & $(s_f)_x$ & $\epsilon$\\
+		$\theta$ ($\si{\radian}$) & $\boldsymbol{v_0}$ ($\si{\meter\per\second}$) & $(v_0)_x$ ($\si{\meter\per\second}$) & $(v_0)_y$ ($\si{\meter\per\second}$) & $(s_0)_y$ ($\si{\meter}$) & $(\hat{s}_f)_x$ ($\si{\meter}$)\\
 		\midrule
-		$\sfrac{\pi}{4}$ & 2.15 & & & & & & \\
-		$\sfrac{7\pi}{36}$ & 2.89 & & & & & & \\
-		$\sfrac{5\pi}{36}$ & 3.32 & & & & & & \\
-		$\sfrac{\pi}{12}$ & 3.71 & & & & & & \\
+		$\sfrac{\pi}{4}$ & 2.15 & 1.52 & 1.52 & 1.01 & 0.97 \\
+		$\sfrac{7\pi}{36}$ & 2.89 & 2.37 & 1.66 & 0.83 & 1.45 \\
+		$\sfrac{5\pi}{36}$ & 3.32 & 3.01 & 1.40 & 0.64 & 1.60 \\
+		$\sfrac{\pi}{12}$ & 3.71 & 3.58 & 0.96 & 0.42 & 1.45 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -383,28 +383,56 @@ The horizontal velocity never changes since the only force acting on the car whi
 
 To find the vertical velocity on impact, the equation of vertical velocity, $v_y(t)$, can be used - this is shown in Table 1. The time of impact has already been expressed in equation (14). Using this with the $v_y(t)$, we can show that the horizontal welocity is given by:
 \begin{equation}
-(v_f)_y = (v_0)_y - \frac{(v_0)_x}{2} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
+(v_f)_y = (v_0)_y - \frac{1}{2} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Given that values for the initial horizontal and vertical velocities, $(v_0)_x$ and $(v_0)_y$, respectively; and the launch height, $(s_0)_y$, are known then magnitude and angle with the horizontal of the impact velocity can be calculated. The results of these calculations can be found in Table 9.
+This simplifies to the following:
+\begin{equation}
+(v_f)_y = - \frac{1}{2} \sqrt{4(v_0)_y^2 + 8g(s_0)_y}
+\end{equation}
+
+Given that values for the initial horizontal and vertical velocities, $(v_0)_x$ and $(v_0)_y$, respectively; and the launch height, $(s_0)_y$, are known then magnitude and angle with the horizontal of the impact velocity can be calculated using equations (21), (17), and (18). The results of these calculations can be found in Table 9.
 
 \begin{table}[h]
 	\centering
-	\caption{text}
+	\caption{Calculation of the magnitide and angle with the horizontal of final velocity on impact.}
 	\begin{tabular}{rrrrrrr}
 		\toprule
-		$\theta$ & $|\boldsymbol{v_0}|$ & $(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $|\boldsymbol{v_f}|$ & $\alpha$\\
+		$\theta$ ($\si{\radian}$) & $|\boldsymbol{v_0}|$ ($\si{\meter\per\second}$) & $(v_0)_x$ ($\si{\meter\per\second}$) & $(v_0)_y$ ($\si{\meter\per\second}$) & $(s_0)_y$ ($\si{\meter}$) & $|\boldsymbol{v_f}|$ ($\si{\meter\per\second}$) & $\alpha$ (degree)\\
 		\midrule
-		$\sfrac{\pi}{4}$ & 2.15 \\
-		$\sfrac{7\pi}{36}$ & 2.89 \\
-		$\sfrac{5\pi}{36}$ & 3.32 \\
-		$\sfrac{\pi}{12}$ & 3.71 \\
+		$\sfrac{\pi}{4}$ & 2.15 & 1.52 & 1.52 & 1.01 & 4.95 & -72.06 \\
+		$\sfrac{7\pi}{36}$ & 2.89 & 2.37 & 1.66 & 0.83 & 4.96 & -61.53 \\
+		$\sfrac{5\pi}{36}$ & 3.32 & 3.01 & 1.40 & 0.64 & 4.86 & -51.69 \\
+		$\sfrac{\pi}{12}$ & 3.71 & 3.58 & 0.96 & 0.42 & 4.69 & -40.21 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
+\newpage
+
 \section{Discussion}
-The voltage applied to the track is a constant 12$\si{\volt}$. The two conductors on the car's underside touch the track and complete the circuit, which powers the small electric dc motor mounted in the car. Torque speed characteristics are different depending on the dc motor circuit topology, however, most arrangements see torque fall away as the motor speed increase. Since torque is providing force to accelerate the car, we can conclude that acceleration is not constant over the track length.
+The calculated distance, $(\hat{s}_f)_x$, was not a reliable predictor of the actual horizontal distance travelled, $(s_f)_x$. The results comparing calculated and actual values can be seen in Table 10. The table also shows the error between predicted and actual, $(\hat{s}_f)_x - (s_f)_x$, denoted as $\epsilon$. Finally, in the last column in Table 10, $\epsilon$ is considered as a percentage of the actual measured distance, $\sfrac{\epsilon}{(s_x)_f}$.
+
+\begin{table}[h]
+	\centering
+	\caption{Calculated horizontal distance travelled, compared to the actual distance travelled.}
+	\begin{tabular}{rrrrr}
+		\toprule
+		$\theta$ ($\si{\radian}$) &  $(\hat{s}_f)_x$ ($\si{\meter}$) & $(s_f)_x$ ($\si{\meter}$) & $\epsilon$ ($\si{\meter}$) & \% error\\
+		\midrule
+		$\sfrac{\pi}{4}$ & 0.97 & 1.015 & -0.048 & -4.75 \\
+		$\sfrac{7\pi}{36}$ & 1.45 & 1.500 & -0.049 & -3.27 \\
+		$\sfrac{5\pi}{36}$ & 1.60 & 1.569 & 0.032 & 2.03 \\
+		$\sfrac{\pi}{12}$ & 1.45 & 1.423 & 0.032 & 2.23 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The data shows that at higher launch angles the prediction appears to under estimate the actual distance, and at lower angles the prediction appears to over estimate the actual distance. Prediction error severity seems to mitigate as the launch angle becomes lower with the biggest prediction error at a launch angle of $\sfrac{\pi}{4}$ with a value -5$\si{\centi\meter}$ and the smallest at a launch angle of $\sfrac{\pi}{12}$ with value +3$\si{\centi\meter}$. The error mitigation trend is also shown in the \% error field. Errors range from approximately 2\% to 5\% of the actual value travelled, which is material in size - this is the principal reason for concluding that calculated horizontal distances in this analysis are not reliable. Explaining the root cause of the observed errors is difficult because, although there are only a small number of data points, the error seems to be following a trend which would rule out systematic errors from measurement devices like the timer at the end of the track. Furthermore, a 5\% error seems to be unreasonaly large to ascribe to air resistance forces. Another cause of the errors could be put down to human error in measurement, however, the expectation would be that these errors would be stochasitic in nature and not following a trend. Further measurements of existing angles, and new angles, would help to determine if the trend is concidence or if there is some other factor involved. \\ 
+
+The voltage applied to the track is a constant 12$\si{\volt}$. The two conductors on the car's underside touch the track and complete the circuit, which powers the small electric dc motor mounted in the car. Torque speed characteristics are different depending on the dc motor circuit topology, however, most arrangements see torque fall away as the motor speed increase. Since torque is providing force to accelerate the car, we can conclude that acceleration is not constant over the track length.\\
+
+The analysis undertaken here assumes that the car is a point mass, as it travels through the air. The actual dynamics of the car in flight sees the body of the vehicle rotating around the mass centroid of the vehicle, causing it to tumble when airborne. In spite of this our point mass assumption remains reasonable since the car is not in contact with any other body while airborne, meaning that the vehicle centroid is approximately the point mass. 
 
 \section{Conclusion}
 
