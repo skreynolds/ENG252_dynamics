@@ -24,7 +24,7 @@
 
 %------------------------------------------------------------
 \graphicspath{{./fig/}}
-
+\pgfplotsset{compat=1.13}
 %------------------------------------------------------------
 \setlength{\parindent}{0in}
 
@@ -136,7 +136,30 @@ Expanding equation (7) and simplifiying results illustrates the trajectory shape
 \subsection{Scope}
 The scope of this practical is to apply a force to a small electric car, accelerating it along a short linear track. Once the car leaves the track it will follow a quadratic trajectory.
 
+\newpage
+
 \section{Setup}
+A model electric car, shown in Figure XXXX, is accelerated along a 1.4$\si{\meter}$ track by an electric dc motor. Two metal strips along the track length have a 12$\si{\volt}$ voltage potential difference applied whcih power the dc motor when two metal tabs on the car's underside touch the track conductors. The track, shown in Figure XXXX, is proped up at a known angle with an aluminium strut. Upon reaching the track termination the car is lauched into the air, at which point it continues a parabolic trajectory until it lands on a mat. The horizontal distance from the track end to the position where the car landed is measured.
+\begin{figure}[h]
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\frame{\includegraphics[scale=0.05]{fig1}}
+		\caption{The car used for the practical.}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\frame{\includegraphics[scale=0.05]{fig2}}
+		\caption{The track used for the practical - this setup was located in the right rear corner of the laboratory.}
+	\end{minipage}
+\end{figure}
+
+Towards the end of the track, a short 0.1$\si{\meter}$ section of the track is fit with a timer which trips on and off again as the car passes through. This can be seen in Figure XXXX. The timer provides a measurement of the time taken for the car to traverse the 0.1$\si{\meter}$ section of the track, allowing for the calculation of an approximate launch velocity as the car leaves the track.
+\begin{figure}[h]
+	\centering
+	\frame{\includegraphics[scale=0.05]{fig3}}
+	\caption{The short linear section (0.1 meter) of the track which trips a timer on and off as the car passes through - this allows the user to approximate a launch velocity for the vehicle.}
+\end{figure}
 
 \newpage
 
@@ -180,10 +203,10 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 \begin{figure}[h]
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{Measurements of $\delta t$ and $(s_x)_f$ taken for the a launch angle of $\sfrac{\pi}{4}$}
+		\captionof{table}{Measurements of $\delta t$ and $(s_f)_x$ taken for the a launch angle of $\sfrac{\pi}{4}$}
 		\begin{tabular}{crr}
 			\toprule
-			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_x)_f \ [\si{\meter}]$\\
+			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_f)_x \ [\si{\meter}]$\\
 			\midrule
 			1 & 48.01 & 1.025\\
 			2 & 46.70 & 0.985\\
@@ -197,10 +220,10 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 	\hspace{1cm}
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{Measurements of $\delta t$ and $(s_x)_f$ taken for the a launch angle of $\sfrac{7\pi}{36}$}
+		\captionof{table}{Measurements of $\delta t$ and $(s_f)_x$ taken for the a launch angle of $\sfrac{7\pi}{36}$}
 		\begin{tabular}{crr}
 			\toprule
-			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_x)_f \ [\si{\meter}]$\\
+			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_f)_x \ [\si{\meter}]$\\
 			\midrule
 			1 & 35.66 & 1.470\\
 			2 & 35.16 & 1.485\\
@@ -216,10 +239,10 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 \begin{figure}[h]
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{Measurements of $\delta t$ and $(s_x)_f$ taken for the a launch angle of $\sfrac{5\pi}{36}$}
+		\captionof{table}{Measurements of $\delta t$ and $(s_f)_x$ taken for the a launch angle of $\sfrac{5\pi}{36}$}
 		\begin{tabular}{crr}
 			\toprule
-			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_x)_f \ [\si{\meter}]$\\
+			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_f)_x \ [\si{\meter}]$\\
 			\midrule
 			1 & 30.34 & 1.590\\
 			2 & 30.39 & 1.540\\
@@ -233,10 +256,10 @@ The calculated results can be seen in Table XXXX. The car was launched off the r
 	\hspace{1cm}
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{Measurements of $\delta t$ and $(s_x)_f$ taken for the a launch angle of $\sfrac{\pi}{12}$}
+		\captionof{table}{Measurements of $\delta t$ and $(s_f)_x$ taken for the a launch angle of $\sfrac{\pi}{12}$}
 		\begin{tabular}{crr}
 			\toprule
-			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_x)_f \ [\si{\meter}]$\\
+			Trial No. & $\delta t \ [\si{\milli\second}]$ & $(s_f)_x \ [\si{\meter}]$\\
 			\midrule
 			1 & 27.27 & 1.450\\
 			2 & 26.79 & 1.425\\
@@ -285,8 +308,8 @@ As outlined in Section XXXX, a small device of approximately $0.1\si{\meter}$ in
 				\addplot[thick, red, ->, domain=0:1]{2.5+2*x};
 				\addplot[domain=0:1]{2.5};
 			\end{axis}
-			\node[left] (a) at (0,2.8) {$(s_y)_0$};
-			\node[below] (b) at (5.8,0) {$(s_x)_f$};
+			\node[left] (a) at (0,2.8) {$(s_0)_y$};
+			\node[below] (b) at (5.8,0) {$(s_f)_x$};
 			\node[red,above] (b) at (1.3,5) {$\boldsymbol{v_0}$};
 			\node[above] (b) at (0.32,2.82) {$\theta$};
 		\end{tikzpicture}
@@ -296,46 +319,78 @@ As outlined in Section XXXX, a small device of approximately $0.1\si{\meter}$ in
 
 Suppose the initial velocity $\boldsymbol{v_0}$, launch angle $\theta$, and launch height $(s_0)_y$ are known. The initial velocity can be decomposed into $x$ and $y$ components as follows:
 \begin{align}
-(v_x)_0 &= |\boldsymbol{v_0}|\cos(\theta)\\
-(v_y)_0 &= |\boldsymbol{v_0}|\sin(\theta)
+(v_0)_x &= |\boldsymbol{v_0}|\cos(\theta)\\
+(v_0)_y &= |\boldsymbol{v_0}|\sin(\theta)
 \end{align}
 
-To find the horizontal distance, $(s_x)_f$, at the point of projectile impact we can employ the known equation of motion for $s_x(t)$ shown in Table 1. In order to calculate $(s_x)_f$ using this equation, we first need to determine the time taken for the object to collide with the ground. This can be found using the equation for vertical displacement, $s_y(t)$, also shown in Table 1. Specifically, we are interested in the case when $s_y(t) = 0$. This yields the following:
+To find a prediction of horizontal distance, $(\hat{s}_f)_x$, at the point of projectile impact we employ the known equation of motion for $s_x(t)$ shown in Table 1. In order to calculate $(\hat{s}_f)_x$, we first need to determine the time taken for the object to collide with the ground. This is obtained with the equation for vertical displacement, $s_y(t)$, also shown in Table 1. Specifically, we are interested in the case when $s_y(t) = 0$. This yields the following:
 \begin{equation}
-0 = (s_y)_0 + (v_y)_0 t - \frac{1}{2}gt^2
+0 = (s_0)_y + (v_0)_y t - \frac{1}{2}gt^2
 \end{equation}
 
 Multiplying equation (XXXX) throughout by 2, and solving using the quadratic formula yields:
 \begin{equation}
-t = \frac{2(v_y)_0 \pm \sqrt{4(v_y)_0^2 + 8g(s_y)_0}}{2g}
+t = \frac{2(v_0)_y \pm \sqrt{4(v_0)_y^2 + 8g(s_0)_y}}{2g}
 \end{equation} 
 
-Noting that $2(v_y)_0 < \sqrt{4(v_y)_0^2 + 8g(s_y)_0}$ and $t>0$ we can discard on solution. Hence, when $(s_y(t) = 0)$, we note that:
+Noting that $2(v_0)_y < \sqrt{4(v_0)_y^2 + 8g(s_0)_y}$ and $t>0$ we can discard one solution. Hence, when $(s_y(t) = 0)$, we note that:
 \begin{equation}
-t = \frac{2(v_y)_0 + \sqrt{4(v_y)_0^2 + 8g(s_y)_0}}{2g}
+t = \frac{2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}}{2g}
 \end{equation}
 
-Now, to find $(s_x)_f$ we can substitute the expression for time in (14) to the equation of horizontal displacement, $s_x(t)$, from Table XXXX. This will gives us the following:
+To find predicted horizotal distance ${(\hat{s}_x)_f}$ we substitute the expression for time in (14) to the equation of horizontal displacement, $s_x(t)$, from Table XXXX. This will gives us the following:
 \begin{equation}
-(s_x)_f = (s_x)_0 + \frac{(v_x)_0}{2g} \bigg[2(v_y)_0 + \sqrt{4(v_y)_0^2 + 8g(s_y)_0}\bigg]
+(\hat{s}_f)_x = (s_0)_x + \frac{(v_0)_x}{2g} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Noting that, by design, our coordinate system assignment ensures that $(s_x)_0 = 0$, hence, equation (15) simplifies to:
+Noting that, by design, our coordinate system assignment ensures that $(s_0)_x = 0$, hence, equation (15) simplifies to:
 \begin{equation}
-(s_x)_f = \frac{(v_x)_0}{2g} \bigg[2(v_y)_0 + \sqrt{4(v_y)_0^2 + 8g(s_y)_0}\bigg]
+(\hat{s}_f)_x = \frac{(v_0)_x}{2g} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
 \end{equation}
 
-Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\boldsymbol{v_0}$, $\theta$, and $(s_y)_0$. The calculation results can be seen in Table XXXX. The table also shows the measured result and the error between actual and predicted denoted as $\epsilon$.
+Equation (16) has been applied to each of the four launch angles. The important parameters here are: $\theta$, $\boldsymbol{v_0}$, and $(s_0)_y$. The calculation results can be seen in Table XXXX. The table also shows the measured result and the error between actual and predicted denoted as $\epsilon$.
+\begin{table}[h]
+	\centering
+	\caption{text}
+	\begin{tabular}{rrrrrrrr}
+		\toprule
+		$\theta$ & $\boldsymbol{v_0}$ & $(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $(\hat{s}_f)_x$ & $(s_f)_x$ & $\epsilon$\\
+		\midrule
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+To deterimine the final velocity prior to impact we note that we need to determine the velocity magnitude $|\boldsymbol{v_f}|$ and the angle with the horizontal $\theta$. Given we know $(v_x)_f$, and $(v_y)_f$, these variables can be determined using Pythogoras' theorem and basic trigonometry as follows:
+\begin{align}
+|\boldsymbol{v_f}| &= \sqrt{(v_f)_x^2 + (v_f)_y^2}\\
+\theta &= -\arctan\bigg(\frac{(v_f)_y^2}{(v_f)_x^2}\bigg)
+\end{align} 
+
+The horizontal velocity never changes since the only force acting on the car while airborne is gravity, which is orthogonal to the horizontal component of the velocity. Hence, we can write that:
+\begin{equation}
+(v_f)_x = (v_0)_x
+\end{equation}
+
+To find the vertical velocity on impact, the equation of vertical velocity, $v_y(t)$, can be used - this is shown in Table XXXX. The time of impact has already been expressed in equation (14). Using this with the $v_y(t)$, we can show that the horizontal welocity is given by:
+\begin{equation}
+(v_f)_y = (v_0)_y - \frac{(v_0)_x}{2} \bigg[2(v_0)_y + \sqrt{4(v_0)_y^2 + 8g(s_0)_y}\bigg]
+\end{equation}
+
+Given that values for the initial horizontal and vertical velocities, $(v_0)_x$ and $(v_0)_y$, respectively; and the launch height, $(s_0)_y$, are known then magnitude and angle with the horizontal of the impact velocity can be calculated. The results of these calculations can be found in Table XXXX.
+
 \begin{table}[h]
 	\centering
 	\caption{text}
 	\begin{tabular}{rrrrr}
-		content...
+		\toprule
+		$(v_0)_x$ & $(v_0)_y$ & $(s_0)_y$ & $|\boldsymbol{v_f}|$ & $\theta$\\
+		\midrule
+		\bottomrule
 	\end{tabular}
 \end{table}
 
 \section{Discussion}
-
+The voltage applied to the track is a constant 12$\si{\volt}$. The two conductors on the car's underside touch the track and complete the circuit, which powers the small electric dc motor mounted in the car. Torque speed characteristics are different depending on the dc motor circuit topology, however, most arrangements see torque fall away as the motor speed increase. Since torque is providing force to accelerate the car, we can conclude that acceleration is not constant over the track length.
 
 \section{Conclusion}
 
