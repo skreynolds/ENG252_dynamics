@@ -77,7 +77,7 @@
 \maketitle
 
 \section{Introduction}
-Dynamics of physical systems can be analysed by considering forces acting on the system. Whilst this method typically yields solutions in theory, it can be cumbersome to put into practice. An alternative approach, whereby system energies are considered, is often faster and conceptually easier to deal with. The simplest definition for energy is the ability to do work, where work, $W$, is defined as the application of force over a distance. More concretely, Giancolli defines this as the product of the magnitude of the displacement, $d$, multiplied by the component of a constant force parallel to the displacement, $F_{||}$. This is shown mathematically in equation (1).
+Dynamics of physical systems can be analysed by considering forces acting on the system. Whilst this method typically yields solutions in theory, it can be cumbersome to put into practice. An alternative approach, whereby system energies are considered, is often faster and conceptually easier to deal with. The simplest definition for energy is the ability to do work, where work, $W$, is defined as the application of force over a distance. More concretely, Giancoli \cite{Giancoli:2000} defines this as the product of the magnitude of the displacement, $d$, multiplied by the component of a constant force parallel to the displacement, $F_{||}$. This is shown mathematically in equation (1).
 \begin{equation}
 W = F_{||}d
 \end{equation}
@@ -93,6 +93,8 @@ The above definition has limited application since the object path may be non-li
 		\fill (4,0) circle[radius=2pt] node[above right] {$b$};
 		\node at (0.1,1) {$\boldsymbol{F_1}$};
 		\node at (2.7,0.5) {$\boldsymbol{F_2}$};
+		\node at (0.6,0.7) {\small$\theta_1$};
+		\node at (2.5,-0.17) {\small$\theta_2$};
 	\end{tikzpicture}
 	\caption{A variable force is applied to an object as it moves along a non-linear path from point a to b.}
 \end{figure}
@@ -139,13 +141,13 @@ Suppose that a mass $m$ is moved from some height $y_2$ to another height $y_1$,
 W_g = \int_{y_1}^{y_2} (mg) \ dy = mg(y_2 - y_1)
 \end{equation}
 
-The work is positive since the direction of movement is in the same direction as the force. Giancolli defines this as work due to gravitational potential energy, and goes on to define gravitational potential energy $V_g$, for some height $h$ above a reference point, as:
+The work is positive since the direction of movement is in the same direction as the force. Giancoli \cite{Giancoli:2000} defines this as work due to gravitational potential energy, and goes on to define gravitational potential energy $V_g$, for some height $h$ above a reference point, as:
 \begin{equation}
 V_g = mgh
 \end{equation}
 
 \subsubsection{Elastic Potential Energy}
-Suppose that a spring is stretched or compressed a distance $x$ from it's unstretched position. According to Giancolli, the spring exerts a force $F_s$ proportional to the stiffness coefficient, $k$, opposite to the direction of displacement:
+Suppose that a spring is stretched or compressed a distance $x$ from it's unstretched position. According to Giancoli \cite{Giancoli:2000}, the spring exerts a force $F_s$ proportional to the stiffness coefficient, $k$, opposite to the direction of displacement:
 \begin{equation}
 F_s = -kx
 \end{equation}
@@ -155,17 +157,33 @@ Letting the spring return to it's original unstretched state allows a spring for
 W_e = \int_{0}^{x} kx \ dx = \frac{1}{2}kx^2
 \end{equation}
 
-Giancolli defines this as work due to elastic potential energy, and goes on to define elastic potential energy $V_e$, for some spring with linear displacement $x$, and stiffness coefficient $k$, as:
+Giancolli \cite{Giancoli:2000} defines this as work due to elastic potential energy, and goes on to define elastic potential energy $V_e$, for some spring with linear displacement $x$, and stiffness coefficient $k$, as:
 \begin{equation}
 V_e = \frac{1}{2}kx^2
 \end{equation}
 
 \subsection{Conservation of Energy}
+One of the most important aspects of energy as a physical quantity is that it is defined such that the total energy of a closed system is the same before and after any process occurs. Put simply, energy is a conserved quantity. For a mechanical system transitioning from state $s_1$ to some other state $s_2$, Giancoli states that in the absence of external forces doing work on the system, the sum of kinetic energy $T$ and potential energy $V$ is the same in $s_1$ as it is in $s_2$:
+\begin{equation}
+V_1 + T_1 = V_2 + T_2
+\end{equation}
+
+Further, decomposing potential energy into gravitational and elastic components yields:
+\begin{equation}
+(V_g)_1 + (V_e)_1 + T_1 = (V_g)_2 + (V_e)_2 + T_2
+\end{equation} 
 
 \subsection{Scope}
+This practical requires the specification of a length of elastic cord for a bungee jumping experiment through the application of physical energy calculations involving gravitational potential energy, elastic potential energy, and the conservation of energy. More specifically the cord length, which is attached to a balcony of known height, and to a mass of known weight, must be specified such that the mass traverses the full length of the balcony without colliding with the ground. This work is logically split into two main parts:
+\begin{itemize}
+	\item determine the spring coefficient, a material property of the elastic cord, by collecting experimental data on a section of known length of elastic cord; and
+	\item use energy calculations to specify a length of elastic cord such that the mass will get as close to the ground as possible, without undergoing collision
+\end{itemize}
+
+\newpage
 
 \section{Results}
-A short section of elastic cord was used to capture experimental data on the cord's material properties. Two loops were tied in each end of the cord, so that one end could be attached to a retort stand, and the other end provided a location to place mass. The cord length was measured from knot to knot and was recorded as $0.47\si{\meter}$. Trials were undertaken placing successively larger masses on the cord. For each mass the cord was allowed to reach steady state elastic deformation, at which point the length was measured. The whole experiment was undertaken twice: lengths from the first experiment are labelled $\tilde{x}_1$; and lengths from the second experiment are labelled $\tilde{x}_2$. Experimental set up can be seen in Figure 2, and the tabulated results can be seen in Table 1.
+A short section of elastic cord was used to capture experimental data on the cord's material properties. Two loops were tied in each end of the cord, so that one end could be attached to a retort stand, and the other end provided a location to place mass. The cord length was measured from knot to knot and was recorded as $0.47\si{\meter}$. Trials were undertaken placing successively larger masses on the cord. For each mass the cord was allowed to reach steady state elastic deformation, at which point the length was measured. The whole experiment was undertaken twice: lengths from the first experiment are labelled $\tilde{x}_1$; and lengths from the second experiment are labelled $\tilde{x}_2$. Experimental set up can be seen in Figure 2, and the tabulated results can be seen in Table 1.\\
 
 \begin{figure}[h]
 	\begin{minipage}{0.45\textwidth}
@@ -201,27 +219,22 @@ A short section of elastic cord was used to capture experimental data on the cor
 Calculations are separated into two main subsections: determining the stiffness coefficient of the elastic cord used for the bungee jumping chicken; and the calculation of elastic cord length specified such that the bungee jumping chicken traverses the full balcony height without colliding with the ground.
 
 \subsection{Determining Stiffness Coefficient, $k$}
-The spring equation, derived from Hooke's law, states that under elastic deformation a force exerted by a spring, $F_s$, is opposite in direction and proportional to the springs displacement from it's unstretched state, $x$. The proportionality constant, referred to as the stiffness coefficient of the spring, is denoted by $k$. Mathematically the spring equation is expressed in equation (6).
-\begin{equation}
-F_s = -kx
-\end{equation} 
-
-A scatter plot of $(x, F_s)$ pairs can be used to approximate $k$ by fitting a linear model to the data using least squares. Equation (6) highlights that the linear regression model will need to be forced through the origin. To calculate $F_s$ we first note that at steady state elastic deformation the mass attached to the elastic cord is at rest. A free body diagram can be seen in Figure 3, where two forces are shown acting on the mass. Acting downwards is the force due to gravity, $F_g$; and acting upwards is an opposing force from the elastic cord, $F_s$. Since the mass is in static equilibrium we can calculate the magnitude of $F_s$ as follows:
+The spring equation, derived from Hooke's law, states that under elastic deformation a force exerted by a spring, $F_s$, is opposite in direction and proportional to the springs displacement from it's unstretched state, $x$ \cite{Giancoli:2000}. The proportionality constant, referred to as the stiffness coefficient of the spring, is denoted by $k$. Mathematically the spring equation is expressed in equation (11) in Section 1.1.2. A scatter plot of $(x, F_s)$ pairs can be used to approximate $k$ by fitting a linear model to the data using least squares. Equation (11) highlights that the linear regression model will need to be forced through the origin. To calculate $F_s$ we first note that at steady state elastic deformation the mass attached to the elastic cord is at rest. A free body diagram can be seen in Figure 3, where two forces are shown acting on the mass. Acting downwards is the force due to gravity, $F_g$; and acting upwards is an opposing force from the elastic cord, $F_s$. Since the mass is in static equilibrium we can calculate the magnitude of $F_s$ as follows:
 \begin{align}
 + \uparrow \sum F &= 0 \nonumber \\
 F_s - F_g &= 0 \nonumber \\
 \therefore F_s &= F_g
 \end{align} 
 
-Given there will be no large excursions from the surface of Earth, it is reasonable to assume that force due to gravity is constant, and gravitational acceleration is equal to $9.81\si{\meter\per\second^2}$, which we denote by $g$. Given the mass attached to the cord is known, $F_s$ can be calculated using equation (7) and $F_g = mg$. Force calculations for all mass loadings are shown in Table 2.
+Given there will be no large excursions from the surface of Earth, it is reasonable to assume that force due to gravity is constant, and gravitational acceleration is equal to $9.81\si{\meter\per\second^2}$, which we denote by $g$. Given the mass attached to the cord is known, $F_s$ can be calculated using equation (16) and $F_g = mg$. Force calculations for all mass loadings are shown in Table 2.
 
 \begin{figure}[h]
 	\begin{minipage}{0.40\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\draw (0,0) circle (1cm);
-			\draw[->, thick, magenta] (0,0) -- (0,-2);
-			\draw[->, thick, magenta] (0,1) -- (0,3);
+			\draw[->, thick, magenta] (0,0) -- (0,-2) node [near end, black, left] {$\boldsymbol{F_g}$};
+			\draw[->, thick, magenta] (0,1) -- (0,3) node [midway, black, left] {$\boldsymbol{F_s}$};
 		\end{tikzpicture}
 		\caption{A free body diagram of the mass in static equilibrium once the elastic cord has reached steady state elastic deformation.}
 	\end{minipage}
@@ -253,7 +266,7 @@ To calculate linear displacement, $x$, the unstretched cord length, $l_{act}$, i
 x_i = \tilde{x}_i - l_{act}
 \end{equation}
 
-Linear displacement values calculated for each mass loading, using $l_{act} = 0.47\si{\meter}$ and equation (8), are shown in Table 2. Recall that experimental data was captured twice in order to reduce stochastic measurement error and hence there are two calculated columns, $x_1$ and $x_2$. The final column in the table is an average of the the $x_1$ and $x_2$ columns and represents the final linear displacement used in the scatter plot showin in Figure 4. 
+Linear displacement values calculated for each mass loading, using $l_{act} = 0.47\si{\meter}$ and equation (17), are shown in Table 2. Recall that experimental data was captured twice in order to reduce stochastic measurement error and hence there are two calculated columns, $x_1$ and $x_2$. The final column in the table is an average of the the $x_1$ and $x_2$ columns and represents the final linear displacement used in the scatter plot showin in Figure 4. 
 
 \begin{figure}[h]
 	\centering
@@ -280,24 +293,31 @@ Linear displacement values calculated for each mass loading, using $l_{act} = 0.
 	\caption{Scatter plot showing the linear displacement from unstretched position on the horizontal axis and the resulting elastic force on the vertical axis. The blue line represents a linear model fit to the data, based on equation (14).}
 \end{figure}
 
-Least squares was used to fit a linear model to the scatter plot. Note that the model was forced through the origin. Graphically the model is depicted by the blue line in Figure 4. The reported regression equation can be seen in equation (9).
+Least squares was used to fit a linear model to the scatter plot. Note that the model was forced through the origin. Graphically the model is depicted by the blue line in Figure 4. The reported regression equation can be seen in equation (18).
 \begin{equation}
 F_s = 90.12x \ \si{\newton}
 \end{equation}
 
-We note a stiffness coefficient of $90.12\si{\newton\per\meter}$ for the $0.47\si{\meter}$ length of bungee cord. The elastic cord material used for the bungee jumping chicken will be identical to that tested in the lab, however, the specified length will not be $0.47\si{\meter}$ so $k$ will need to be rescaled.
-
-\subsection{Predicted Bungee Cord Length}
-A rubber chicken of mass $m$, shown in Figure 5, will be tied to a section of elastic cord of length $L$. The other end of the cord will be fastened to a third story balcony. The chicken will be released, from rest, at a height $h$ above the ground. The chicken will fall the length $L$, at which point the elastic cord will begin to stretch by some amount $x$, arresting the fall and momentarily bringing the chicken to rest just above the ground. Additionally there are three other lengths that need to be considered prior to analysing the system: the chicken length, denoted as $l_1$; the length of a small tether at the base elastic cord to attached the chicken, denoted as $l_2$; and a small length of rope which clips the elastic cord to the balcony, denoted as $l_3$.\\
-
-To determine the length $L$ such that the chicken will not collide with the ground we not that the sum of $L$, $l_1$, $l_2$, $l_3$, and $x$ must equal $h$. Mathematically this is described by equation (XXXX), and is shown graphically in Figure XXXX.
+We note a stiffness coefficient of $90.12\si{\newton\per\meter}$ for the $0.47\si{\meter}$ length of bungee cord. The elastic cord material used for the bungee jumping chicken will be identical to that tested in the lab, however, the specified length is unknown meaning $k$ will need to be rescaled. This is achieved by multiplying $k$ by the $l_{act}$ length cord length and dividing by the unknown length $L$:
 \begin{equation}
-h = L + x + l_1 + l_2 + l_3
+\frac{k \cdot l_{act}}{L} = \frac{90.12 \times 0.47}{L} = \frac{42.36}{L} \si{\newton\per\meter}
 \end{equation}
 
-More compactly, we can express equation (XXXX) as:
+The right hand side of (19) allows us to specify the stiffness coefficient for any length of cord, for example if $L = 1\si{\meter}$ then $k = 42.36 \si{\newton\per\meter}$.
+
+\newpage
+
+\subsection{Predicted Bungee Cord Length}
+A rubber chicken of mass $m$, shown in Figure 5, will be tied to a section of elastic cord of length $L$. The other end of the cord will be fastened to a third story balcony. The chicken will be released, from rest, at a height $h$ above the ground. The chicken will fall the length $L$, at which point the elastic cord will begin to stretch by some amount $x$, arresting the fall and momentarily bringing the chicken to rest just above the ground. Additionally there are three other lengths that need to be considered prior to analysing the system: the chicken length, denoted as $l_1$; the length of a small tether at the base elastic cord to attached the chicken, denoted as $l_2$; and a small length of rope which clips the elastic cord to the balcony, denoted as $l_3$. Note that an additional parameter, $l_4$ , was introduced to act as a conservative buffer to guarantee that the chicken does not collide with the ground. An original prediction will be made with this parameter set to $0\si{\meter}$, and then a conservative estimate will be made setting this to $0.1\si{\meter}$. \\
+
+To determine the length $L$ such that the chicken will not collide with the ground we note that the sum of $L$, $l_1$, $l_2$, $l_3$, $l_4$, and $x$ must equal $h$. Mathematically this is described by equation (20), and is shown graphically in Figure 6.
 \begin{equation}
-x = h - \bigg(L + \sum_{i=1}^{3} l_i \bigg)
+h = L + x + l_1 + l_2 + l_3 + l_4
+\end{equation}
+
+More compactly, we can express (20) as:
+\begin{equation}
+x = h - \bigg(L + \sum_{i=1}^{4} l_i \bigg)
 \end{equation}
 
 \begin{figure}[h]
@@ -325,32 +345,32 @@ x = h - \bigg(L + \sum_{i=1}^{3} l_i \bigg)
 	\end{minipage}
 \end{figure}
 
-Despite the complex dynamics occurring throughout the fall there are only two states of interest for calculating $L$: at rest immediately after being released; and at rest when the elastic cord has fully stretched and arrested the motion. These two states are denoted as state 1 and state 2, respectively and are graphically depicted in Figure XXXX. At state 1 we note that there is no elastic potential and the chicken is at rest. Similarly, at state 2 we note that there is no gravitational potential energy, and the chicken is again at rest, momentarily. We conclude that $(V_e)_1 = 0 \si{\joule}$; $T_1 = 0 \si{\joule}$; $(V_g)_2 = 0\si{\joule}$; and $T_2 = 0 \si{\joule}$, and the conservation of energy equation show in (XXXX) reduces to:
+Despite the complex dynamics occurring throughout the fall there are only two states of interest for calculating $L$: at rest immediately after being released; and at rest when the elastic cord has fully stretched and arrested the motion. These two states are denoted as state 1 and state 2, respectively and are graphically depicted in Figure 6. At state 1 we note that there is no elastic potential and the chicken is at rest. Similarly, at state 2 we note that there is no gravitational potential energy, and the chicken is again at rest, momentarily. We conclude that $(V_e)_1 = 0 \si{\joule}$; $T_1 = 0 \si{\joule}$; $(V_g)_2 = 0\si{\joule}$; and $T_2 = 0 \si{\joule}$, and the conservation of energy equation show in (15) reduces to:
 \begin{equation}
 (V_g)_1 = (V_e)_2
 \end{equation}
 
-Using (XXXX) for gravitational potential energy, and (XXXX) for elastic potential energy we can re-express equation (12) as:
+Using (10) for gravitational potential energy, and (13) for elastic potential energy we can re-express equation (22) as:
 \begin{equation}
 mgh = \frac{1}{2}kx^2
 \end{equation}
 
-Multiplying (XXXX) throughout by 2, and substituting (XXXX) results in the following:
+Multiplying (23) throughout by 2, and substituting (21) results in the following:
 \begin{equation}
-2mgh = k\bigg(h - \sum_{i=1}^{3} l_i - L \bigg)^2
+2mgh = k\bigg(h - \sum_{i=1}^{4} l_i - L \bigg)^2
 \end{equation}
 
-Since $h$, $l_1$, $l_2$, and $l_3$ are all known we can simplify (14) by letting:
+Since $h$, $l_1$, $l_2$, $l_3$, and $l_4$ are all known we can simplify (24) by letting:
 \begin{equation}
-\eta = h - \sum_{i=1}^{3} l_i
+\eta = h - \sum_{i=1}^{4} l_i
 \end{equation}
 
-Hence, (XXXX) simplifies to:
+Hence, (24) simplifies to:
 \begin{equation}
 \frac{2mgh}{k} = (\eta - L)^2
 \end{equation}
 
-The stiffness coefficient for an elastic cord of undetermined length can be expressed as $k = \sfrac{\xi}{L}$, where $\xi$ is experimentally determined. Hence, (XXXX) becomes:
+The stiffness coefficient for an elastic cord of undetermined length can be expressed as $k = \sfrac{\xi}{L}$, where $\xi$ is experimentally determined. Hence, (26) becomes:
 \begin{equation}
 \frac{2mgh}{\xi} L = (\eta - L)^2
 \end{equation}
@@ -360,37 +380,80 @@ Expanding the right hand side of the equation and collecting like terms yields a
 L^2 - \bigg(2\eta + \frac{2mgh}{\xi}\bigg)L + \eta^2 = 0
 \end{equation}
 
-Finally, solving equation (XXXX) using the quadratic formula and simplifying yields:
+Finally, solving equation (28) using the quadratic formula, simplifying, and removing the largest solution yields:
 \begin{equation}
-L = \eta +\sfrac{mgh}{\xi} \pm \sqrt{(\eta + \sfrac{mgh}{\xi})^2 - \eta^2}
+L = \eta +\sfrac{mgh}{\xi} - \sqrt{(\eta + \sfrac{mgh}{\xi})^2 - \eta^2}
 \end{equation}
 
-Values for $h$, $l_1$, $l_2$, $l_3$, and $m$ were measured and can be found in Table XXXX below. The parameter $\xi$ was experimentally determined in Section XXXX and is listed in Table XXXX for reference, along with gravitational acceleration $g$. Calculated values for $L$, using (XXXX), can also be found in Table XXXX.
-\begin{table}[h]
+Values for $h$, $l_1$, $l_2$, $l_3$, $l_4$, and $m$ were measured and can be found in Tables 3 and 4 below. The parameter $\xi$ was experimentally determined in Section 3.1 and is listed in Tables 3 and 4 for reference, along with gravitational acceleration $g$. Calculated values for $L$, using (29), can also be found in Tables 3 and 4.\\
+\begin{figure}
 	\centering
-	\caption{text}
-	\begin{tabular}{lcrc}
-		\toprule
-		 Description & Parameter & Value & Unit\\
-		\midrule
-		 Height of balcony & $h$ & $8.81$ & $\si{\meter}$ \\
-		 Length of chicken & $l_1$ & $0.05$ & $\si{\meter}$ \\
-		 Length of tether & $l_2$ & $0.22$ & $\si{\meter}$ \\
-		 Length of balcony connection & $l_3$ & $0.31$ & $\si{\meter}$ \\
-		 Mass of chicken & $m$ & $1.70$ & $\si{\kilogram}$ \\
-		 Experimentally derived stiffness & $\xi$ & $42.36$ & $\si{\newton}$ \\
-		 Gravitational acceleration & $g$ & $9.81$ & $\si{\meter\per\second^2}$ \\
-		 \midrule
-		 \textbf{Calculated length of cord} & $L$ & $3.38$ & $\si{\meter}$\\
-		 \bottomrule
-	\end{tabular}
-\end{table} 
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\captionof{table}{Measured parameter values and subsequent predictions of $L$ using equation (30)}
+		\small
+		\begin{tabular}{lcrc}
+			\toprule
+			Description & Param. & Value & Unit\\
+			\midrule
+			Height of balcony & $h$ & $8.81$ & $\si{\meter}$ \\
+			Length of chicken & $l_1$ & $0.05$ & $\si{\meter}$ \\
+			Chicken tether & $l_2$ & $0.22$ & $\si{\meter}$ \\
+			Balcony tether & $l_3$ & $0.31$ & $\si{\meter}$ \\
+			Cons. parameter & $l_4$ & $0.00$ & $\si{\meter}$ \\
+			Mass of chicken & $m$ & $1.70$ & $\si{\kilogram}$ \\
+			Stiffness & $\xi$ & $42.36$ & $\si{\newton}$ \\
+			Gravitational acc. & $g$ & $9.81$ & $\si{\meter\per\second^2}$ \\
+			\midrule
+			\textbf{Calc. cord length} & $L$ & $3.38$ & $\si{\meter}$\\
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+	\hspace{0.75cm}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\captionof{table}{Predictions of a conservative $L$ using equation (30)}
+		\small
+		\begin{tabular}{lcrc}
+			\toprule
+			Description & Param. & Value & Unit\\
+			\midrule
+			Height of balcony & $h$ & $8.81$ & $\si{\meter}$ \\
+			Length of chicken & $l_1$ & $0.05$ & $\si{\meter}$ \\
+			Chicken tether & $l_2$ & $0.22$ & $\si{\meter}$ \\
+			Balcony tether & $l_3$ & $0.31$ & $\si{\meter}$ \\
+			Cons. parameter & $l_4$ & $0.10$ & $\si{\meter}$ \\
+			Mass of chicken & $m$ & $1.70$ & $\si{\kilogram}$ \\
+			Stiffness & $\xi$ & $42.36$ & $\si{\newton}$ \\
+			Gravitational acc. & $g$ & $9.81$ & $\si{\meter\per\second^2}$ \\
+			\midrule
+			\textbf{Calc. cord length} & $L$ & $3.33$ & $\si{\meter}$\\
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+\end{figure}
 
-\newpage
 
 \section{Discussion}
+Experimental data captured in Section 3.1 shows that there is a non-linear relationship between the force exerted by the elastic cord $F_s$ and the displacement from its unstretched state $x$. This is highlighted in Figure 4. The implications of observed non-linearity is that the linear model (18) is an approximation only, and $k$ contains some estimation error. More importantly, the specification of $L$ relies on a linear definition of a spring model - this has the potential to cause large prediction error if the spring operation starts to move into non-linear regions. Provided the elastic cord operates in the linear region between 0.1$\si{\meter}$ and 0.3$\si{\meter}$ then the linear approximation assumption should be reasonably reliable.\\
+
+A single drop conducted using the originally specified length $L = 3.38\si{\meter}$ reported a distance above the ground of $0.60\si{\meter}$. Since other student trials using the same chicken with $L$ values greater than $3.38\si{\meter}$ did not see the chicken touch the ground, the calculated conservative $L$ value was not tested. Letting $h_{act} = h - d$, where $d$ is distance above the ground, we can observe the results in Table 4. The cord performed more conservatively than expected. Table 4 shows that the difference in total distance traversed is approximately 6.81\% less than expected. The most likely explanation for the -6.81\% discrepancy between predicted and actual value is that the elastic cord is operating on the edge of it's linear region meaning that the some model error is creeping into our prediction.
+
+\begin{table}[h]
+	\centering
+	\caption{Results from practical testing of the bungee jumping chicken}
+	\begin{tabular}{lrrrr}
+		\toprule
+		Description & Length $(L) \ [\si{\meter}]$ & Predicted $h \  [\si{\meter}]$ & Actual $h_{act} \ [\si{\meter}]$ & \% Difference $(\epsilon)$\\
+		\midrule
+		Conservative estimate & 3.33$\si{\meter}$ & - & - & - \\
+		Original Estimate & 3.38$\si{\meter}$ & 8.81 & 8.21 & -6.81 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \section{Conclusion}
+Specifying an elastic cord length to deliver a mass over a vertical distance using conservation of energy laws works reasonably well, however, the assumption of a linear spring model introduces some error into predictive capability. Indeed, the estimate was conservative and resulted in a 6.81\% shortfall in the predicted distance traversed when compared to actual. This approach would not be suitable for applications where a high level of precision is required. A spring model using higher order polynomials may yield better results, since this would provide for non-linear regions of operation in the elastic cord. 
 
 \bibliography{my_bib}
 \bibliographystyle{ieeetr}
