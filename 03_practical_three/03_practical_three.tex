@@ -78,6 +78,7 @@
 \maketitle
 
 \section{Introduction}
+\subsection{Moment of Inertia}
 Consider a body with mass $m$ undergoing rotational motion, with angular acceleration $\alpha$, around a fixed axis $OO'$. Graphically this scenario is depicted in Figure 1. If we want to calculate the Moment of this body around the axis $OO'$, then we need to consider the moments of each and every infinitesimally small mass particle that make up the body. The moment of a single particle mass is given by:
 \begin{equation}
 M = \boldsymbol{r} \times \boldsymbol{F}
@@ -122,78 +123,148 @@ Equation (5) is often thought of as somewhat analogous to $\sum F = ma$, but for
 I = \int r^2 dm
 \end{equation}
 
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}
-		\draw (0,0) ellipse (3 and 0.75);
-		\draw (-3,-0.25) arc (180:360:3 and 0.75);
-		\draw (-3,0) -- (-3,-0.25);
-		\draw (3,0) -- (3,-0.25);
-		\draw [dashed] (0,0) -- (0,3);
-		\draw [dashed] (0,0) -- (4,0);
-		\draw [dashed] (0,0) -- (1,0.5);
-		\draw [->, thick, color=magenta] (1,0.5) -- (1.5,2.5);
-		\draw [->, thick, color=magenta] (-1,0.5) -- (-0.5,2.5);
-		\draw [->, thick, color=magenta] (0,-0.5) -- (-0.5, 1.5);
-		\draw [->, thick, color=magenta] (0,-1) -- (0, -1.75);
-	\end{tikzpicture}
-\end{figure}
+For a body with a uniform mass density $\rho$, we note that $dm = \rho dV$, where $dV$ is an infinitesimally small volume located a distance of $r$ from the centre of rotation. Equation (6) can be written as:
+\begin{equation}
+I = \rho \int r^2 dV 
+\end{equation}
+
+Equation (7) is deceptively simple, however, the evaluation of $I$ can be fiendishly difficult for axes of rotation which do not pass through the body's centre of mass. In practice, (7) is typically only used to determine the moment of inertia through the body's mass centre, $I_G$. To find a moment of inertia around an axis that does not pass through the mass centre, the parallel axis theorem is often applied. The theorem derivation is beyond the scope of this paper, however, the result can be seen in equation (8).
+\begin{equation}
+I_O = I_G + md^2
+\end{equation}
+
+Equation (8) tells us if the moment of inertia around an axis passing through the mass centre of a body $I_G$ is known, then the moment of inertia around any parallel axis $I_O$ is calculated with an additive translation of $I_G$ by the body mass $m$ multiplied by the square of orthogonal Euclidean distance between the two axes $d$.
+
+\subsection{Determining Moments of Inertia with a Trifilar}
+
+consisting of a disk suspended by three wires. Objects are placed in the middle of the disk, and the disk is given a small initial perturbation resulting in small oscillations around the mass centre.
 
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}
-		\draw (0,0) ellipse (1 and 0.25);
-		\draw (-1,-1) arc (180:360:1 and 0.25);
-		\draw (-2,-1) arc (180:360:2 and 0.5);
-		\draw (-2,-1) arc (180:240:2 and -0.5);
-		\draw (2,-1) arc (360:300:2 and -0.5);
-		\draw (-2,-2) arc (180:360:2 and 0.5);
+	\draw (0,0) ellipse (3 and 0.75);
+	\draw (-3,-0.25) arc (180:360:3 and 0.75);
+	\draw (-3,0) -- (-3,-0.25);
+	\draw (3,0) -- (3,-0.25);
+	\draw [dashed] (0,0) -- (0,3);
+	\draw [dashed] (0,0) -- (4,0);
+	\draw [dashed] (0,0) -- (1,0.5);
+	\draw [->, thick, color=magenta] (1,0.5) -- (1.5,2.5);
+	\draw [->, thick, color=magenta] (-1,0.5) -- (-0.5,2.5);
+	\draw [->, thick, color=magenta] (0,-0.5) -- (-0.5, 1.5);
+	\draw [->, thick, color=magenta] (0,-1) -- (0, -1.75);
 	\end{tikzpicture}
+	\caption{A Trifilar is a simple apparatus used to determine the moment of inertia for different objects.}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}
-		\draw (0,0) ellipse (5 and 2);
-		\draw (-5,-0.5) arc (180:360:5 and 2);
-		\draw (-5,0) -- (-5,-0.5);
-		\draw (5,0) -- (5,-0.5);
-		
-		\draw (0,0) ellipse (0.5 and 0.2);
-		
-		\draw (0,0.5) ellipse (0.5 and 0.2);
-		\draw (0,1) ellipse (0.5 and 0.2);
-		\draw (0,1.5) ellipse (0.5 and 0.2);
-		
-		\draw (-0.917,-0.245) ellipse (0.5 and 0.2);
-		\draw (-1.835,-0.4917) ellipse (0.5 and 0.2);
-		\draw (-2.752,-0.7376) ellipse (0.5 and 0.2);
-		
-		\draw (0.917,-0.245) ellipse (0.5 and 0.2);
-		\draw (1.835,-0.4917) ellipse (0.5 and 0.2);
-		\draw (2.752,-0.7376) ellipse (0.5 and 0.2);
-	\end{tikzpicture}
-\end{figure}
-
-
-
-Talk about rotational inertia
-
-Talk about derivation because atan = alpha times r
-
-Talk about the analogous nature to f = ma
-
-Talk about mass moments of inertia and how to calculate
-
-Talk about radius of gyration
-
-
+\newpage
 
 \subsection{Scope}
 
+
+
 \section{Results}
+Experimental characteristics of the Trifilar were measured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; and the radius from centre of disk to middle set of holes $R$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 3.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\captionof{table}{Trifilar parameter measurements}
+		\begin{tabular}{lrc}
+			\toprule
+			Description & Value & Units \\
+			\midrule
+			Disk Mass $(m_d)$ & 0.20 & $\si{\kilogram}$\\
+			Disk Radius $(r_d)$ & 0.14 & $\si{\meter}$ \\
+			Filament Length $(L)$ & 0.45 & $\si{\meter}$ \\
+			Distance to Middle Holes $(R)$ & 0.09 & $\si{\meter}$\\
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\captionof{table}{text}
+		\begin{tabular}{lrc}
+			\toprule
+			Description & Value & Units \\
+			\midrule
+			Disk Mass $(m_d)$ & 0.20 & $\si{\kilogram}$\\
+			Disk Radius $(r_d)$ & 0.14 & $\si{\meter}$ \\
+			
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\draw (0,0) ellipse (5 and 2);
+	\draw (-5,-0.5) arc (180:360:5 and 2);
+	\draw (-5,0) -- (-5,-0.5);
+	\draw (5,0) -- (5,-0.5);
+	
+	\draw (0,0) ellipse (0.5 and 0.2);
+	
+	\draw (0,0.5) ellipse (0.5 and 0.2);
+	\draw (0,1) ellipse (0.5 and 0.2);
+	\draw (0,1.5) ellipse (0.5 and 0.2);
+	
+	\draw (-0.917,-0.245) ellipse (0.5 and 0.2);
+	\draw (-1.835,-0.4917) ellipse (0.5 and 0.2);
+	\draw (-2.752,-0.7376) ellipse (0.5 and 0.2);
+	
+	\draw (0.917,-0.245) ellipse (0.5 and 0.2);
+	\draw (1.835,-0.4917) ellipse (0.5 and 0.2);
+	\draw (2.752,-0.7376) ellipse (0.5 and 0.2);
+	
+	\draw[<->, thick] (-5,-3) -- (5,-3);
+	\end{tikzpicture}
+	\caption{Geometries of the Trifilar disk and holes where small masses were mounted.}
+\end{figure}
+
+Measurement information was also taken about the small objects, which included their mass $m_{obj}$; radius of upper cylinder $r_1$; height of the upper cylinder $h_1$; radius of the lower cylinder $r_2$; and the height of the lower cylinder $h_2$. These measurements are presented in Table 2 above. The object geometries can be seen in Figure 
+
+
+
+\begin{figure}[h]
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw (0,0) ellipse (1 and 0.25);
+			\draw (-1,-1) arc (180:360:1 and 0.25);
+			\draw (-2,-1) arc (180:360:2 and 0.5);
+			\draw (-2,-1) arc (180:240:2 and -0.5);
+			\draw (2,-1) arc (360:300:2 and -0.5);
+			\draw (-2,-2) arc (180:360:2 and 0.5);
+		
+			\draw (-1,0) -- (-1,-1);
+			\draw (1,0) -- (1,-1);
+			\draw (-2,-1) -- (-2,-2);
+			\draw (2,-1) -- (2,-2);
+		\end{tikzpicture}
+		\caption{The small objects are essentially a small cylinder stacked on top of a larger cylinder}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\captionof{table}{text}
+		\begin{tabular}{lrrrrr}
+			\toprule
+			Object & $(T_{10})_1$ & $(T_{10})_2$ & $(T_{10})_3$ & $(T_{10})_4$ & $(T_{10})_5$ \\
+			\midrule
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+\end{figure}
+
+
+\newpage
 
 \section{Calculations}
+
 
 \begin{figure}[h]
 	\centering
@@ -227,6 +298,8 @@ Talk about radius of gyration
 	\draw (4,-1) node {$x=l$};
 	\end{tikzpicture}
 \end{figure}
+
+\newpage
 
 \section{Discussion}
 
