@@ -209,24 +209,24 @@ This practical requires the Mass Moment of Inertia to be determined for various 
 \section{Results}
 Dimensional measurements of the Trifilar were captured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; the radius from centre of disk to inner set of holes $d_1$ the radius from centre of disk to middle set of holes $d_2$; the radius from centre of disk to outer set of holes $d_3$; and the radius from the disk centre to the filament base $r$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 3.
 
-\vspace{0.15cm}
-
 \begin{figure}[h]
 	\centering
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\captionof{table}{Trifilar parameter measurements}
+		\small
 		\begin{tabular}{lrc}
 			\toprule
 			Description & Value & Units \\
 			\midrule
 			Disk Mass $(m_d)$ & 0.200 & $\si{\kilogram}$\\
 			Disk Radius $(r_d)$ & 0.140 & $\si{\meter}$ \\
+			Hole Radius $(r_h)$ & 0.090 & $\si{\meter}$ \\
 			Filament Length $(L)$ & 0.450 & $\si{\meter}$ \\
 			Distance to Inner Holes $(d_1)$ & 0.090 & $\si{\meter}$\\
 			Distance to Middle Holes $(d_2)$ & 0.090 & $\si{\meter}$\\
 			Distance to Outer Holes $(d_3)$ & 0.090 & $\si{\meter}$\\
-			Distance to Filament $(r)$ & 0.049  & $\si{\meter}$ \\
+			Distance to Filament $(r)$ & 0.049 & $\si{\meter}$ \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -234,6 +234,7 @@ Dimensional measurements of the Trifilar were captured prior to undertaking the 
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\captionof{table}{Dimensions of the small masses}
+		\small
 		\begin{tabular}{lrc}
 			\toprule
 			Description & Value & Units \\
@@ -241,8 +242,9 @@ Dimensional measurements of the Trifilar were captured prior to undertaking the 
 			Object Mass $(m_{obj})$ & 0.020 & $\si{\kilogram}$ \\
 			Upper Cylinder Radius $(r_1)$ & 0.090 & $\si{\meter}$ \\
 			Upper Cylinder Height $(h_1)$ & 0.007 & $\si{\meter}$ \\
-			Lower Cylinder Radius $(r_2)$ & 0.090 & $\si{\meter}$ \\
-			Lower Cylinder Height $(h_2)$ & 0.007 & $\si{\meter}$ \\
+			Lower Cylinder Radius $(r_2)$ & 0.010 & $\si{\meter}$ \\
+			Lower Cylinder Height $(h_2)$ & 0.010 & $\si{\meter}$ \\
+			 & & \\
 			 & & \\
 			 & & \\
 			\bottomrule
@@ -326,47 +328,68 @@ The trifilar was rotationally perturbed and allowed to oscillate. The time taken
 
 \section{Calculations}
 \subsection{Mass Moment of Inertia for Disk}
-
 \subsubsection{Disk experimental moment of inertia}
+Ten oscillations of the disk took an average time of 31.21$\si{\second}$, hence one oscillation took approximately 3.12$\si{\second}$. The natural frequency of oscillation, found using (12), is as follows:
+\begin{equation}
+f_n = \frac{1}{3.12} = 0.32\si{\hertz}
+\end{equation}
+
+Using equation (13) the radius of gyration was calculated as:
+\begin{equation}
+k = \frac{0.049}{2 \pi \times 0.320}\sqrt{\frac{9.810}{0.450}} = 0.114\si{\meter}
+\end{equation}
+
+Using equation (14) the moment of inertia is calculated as:
+\begin{equation}
+I_G = 2.58 \times 10^{-3} \ \si{\kilogram\meter^2}
+\end{equation}
+
 \subsubsection{Disk theoretical moment of inertia}
+Given that the mass of the disk is $m_d$, and letting the material area of the disk be $A$, we can specify the mass density by area for the disk material as:
+\begin{equation}
+	\rho_A = \frac{m_d}{A}
+\end{equation}
+
+We note that the area can be calculated by subtracting 10 small holes from the total area of the disk (refer to Figure 5 for a better understanding of disk geometry). The area $A$ can be specified as:
+\begin{equation}
+	A = \pi r_d^2 - 10 \pi r_h^2 = \pi (r_d^2 - 10 r_h^2)
+\end{equation}
+
+According to Meriam and Kraige the mass moment of inertia for a solid cylinder, with mass $M$ and radius $R$, about an axis running down the cylinder length through the mass centre is given by:
+\begin{equation}
+I = \frac{1}{2}MR^2
+\end{equation}
+
+Equation (20) can be used to determine the moment of inertia of the trifilar disk without any holes in it, around the axis through the mass centre $G$, if we assume it is a solid cylindrical object:
+\begin{equation}
+(I_G)_{disk} = \frac{1}{2} \rho_A (\pi r_d^2) r_d^2 = \frac{1}{2} \rho_A \pi r_d^4
+\end{equation}
+
+Similarly, we can determine the moment of inertia of a trifilar disk hole $(I_G)_{hole}$, around the axis through the mass centre $G$, if we assume it is a solid cylindrical object:
+\begin{equation}
+(I_G)_{hole} = \frac{1}{2} (\rho_A \pi r_h^2) r_h^2 = \frac{1}{2} \rho_A \pi r_h^4
+\end{equation}
+
+Given these assumption we calculate the moment of inertia for the trifilar disk with holes by subtracting the moments of inertia for 10 holes from (21). Note that since the holes are not all located with their axis of rotation through their mass centres, some of their moments of inertia need to be translated using the parallel axis theorm (8). Mathematically, this is expressed as: 
+\begin{align}
+(I_G)_{tri} = (I_G)_{disk} - (I_G)_{hole} \nonumber &- 3\big((I_G)_{hole} + \rho_A \pi r_h^2 d_1^2\big) \nonumber \\
+						   &- 3\big((I_G)_{hole} + \rho_A \pi r_h^2 d_2^2\big) \nonumber \\
+						   &- 3\big((I_G)_{hole} + \rho_A \pi r_h^2 d_3^2\big)
+\end{align}
+
+Substituting (21) and (22) into (23) and simplifying yields:
+\begin{equation}
+(I_G)_{tri} = \rho_A \pi \bigg[ \frac{1}{2} r_d^2 - 5r_h^2 - 3r_h^2 (d_1^2 + d_2^2 + d_3^3) \bigg]
+\end{equation}
 
 \subsection{Mass Moment of Inertia for Disk and Objects}
 \subsubsection{Disk and objects experimental moment of inertia}
-\subsubsection{Disk and objects theoretical moment of inertia}
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}
-	% general shift to north east
-	\coordinate (O) at (0.5,0.5);
-	\draw[semithick] (0,0) -- (4,1);% bottom line in front
-	\draw[dashed,color=gray] (O) -- ($(4,1)+(O)$);% bottom line in the back
-	\draw[semithick] (0,3) -- (4,2);% top line in front
-	\draw[semithick] ($(0,3)+(O)$) -- ($(4,2)+(O)$);% top line in the back
-	\draw[semithick] (0,3) -- ($(0,3)+(O)$);% line to the back, top left
-	\draw[semithick] (4,2) -- ($(4,2)+(O)$);% line to the back, top right
-	\draw[semithick] (4,1) -- ($(4,1)+(O)$);% line to the back, bottom right
-	\draw[dashed,color=gray] (0,0) -- (O);% line to the back, bottom left
-	% the first angle is 180°+atan(0.25)
-	% the second angle is 180°-atan(0.25)
-	% the radius is sqrt(6^2+1.5^2)
-	\draw[semithick] (0,0) arc (194.036:165.964:6.185);% left arc in front
-	\draw[dashed,color=gray] (O) arc (194.036:165.964:6.185);% left arc in the back
-	% the first angle is 180°+atan(0.25)
-	% the second angle is 180°-atan(0.25)
-	% the radius is 1/3*sqrt(6^2+1.5^2)
-	\draw[semithick] (4,1) arc (194.036:165.964:2.062);% right arc in front
-	\draw[semithick] ($(4,1)+(O)$) arc (194.036:165.964:2.062);% right arc in the back
-	\draw (-0.5,1.7) node {$b_1$};
-	\draw (3.6,1.7) node {$b_2$};
-	\draw (0,3.5) node {$s$};
-	\draw[|-,semithick] (0,-0.5) -- (4,-0.5);
-	\draw[|->,semithick] (4,-0.5) -- (4.5,-0.5);
-	\draw (0,-1) node {$x=0$};
-	\draw (4,-1) node {$x=l$};
-	\end{tikzpicture}
-\end{figure}
+Ten oscillations of the disk plus the three objects located in the middle holes took an average time of 33.23$\si{\second}$, hence one oscillation took approximately 3.23$\si{\second}$. Similarly to Section 3.1.1, the natural frequency of oscillation is found using (12) and is:
+\begin{equation}
+f_n = 
+\end{equation}
 
-\newpage
+\subsubsection{Disk and objects theoretical moment of inertia}
 
 \section{Discussion}
 
