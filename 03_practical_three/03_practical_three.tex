@@ -135,20 +135,19 @@ I_O = I_G + md^2
 
 Equation (8) tells us if the moment of inertia around an axis passing through the mass centre of a body $I_G$ is known, then the moment of inertia around any parallel axis $I_O$ is calculated with an additive translation of $I_G$ by the body mass $m$ multiplied by the square of orthogonal Euclidean distance between the two axes $d$.
 
+\subsection{Radius of Gyration}
+Meriam and Kraige define the radius of gyration $k$ as the radial distance from some axis of rotation such that if the whole mass of the body were concentrated to a point, then the moment of inertia about the given axis would be identical in value to the moment of inertia about the axis using the actual distribution of the body's mass. Mathematically, for some mass $m$, if $I_O$ is the moment of inertia about some axis $O$ then the radius of gyration is defined as:
+\begin{equation}
+k = \sqrt{\frac{I_O}{m}}
+\end{equation}
+
+The radius of gyration has a similar parallel axes theorem as that seen for moments of inertia in equation (8). If we know the radius of gyration for the axis passing through the mass centre, $k_G$, then a parallel axis $O$ at distance $d$ has radius of gyration given by:
+\begin{equation}
+	k^2_O = k^2_G + d^2
+\end{equation}
+
 \subsection{Determining Moments of Inertia with a Trifilar}
-
-A Trifilar is a simple apparatus used to determine an object's Mass Moment of Inertia. The device consists of a circular platform with some mass $m$, which is suspended by three wire filaments of length $L$. Filaments are placed at 120$^o$ separation from each other, at a distance of $r$ from the disk centre. An object is placed in the centre of the device to determine it's mass moment of interia. Figure 2 shows an unloaded Trifilar disk in a state of rotation. If the disk is given some initial rotational perturbation, the interaction between the weight of the disk $mg$, and the forces from the filaments $T$ cause a rotational motion. An expression for natural frequency of oscillation $f_n$ of the disk and object can be derived by considering the sum of forces in the vertical direction and the moments about the disk centre. The derivation is beyond the scope of this paper, however, the result can be seen in equation (9) below:
-\begin{equation}
-f_n = \frac{r}{2 \pi k} \sqrt{\frac{g}{L}}
-\end{equation}
-
-
-An object's moment of inertia is found by placing it on the disk, and perturbing the disk such that it only undergoes rotational motion, oscillating about the disk centre. Natural oscillation frequency can be determined by observing period of oscillation $T_n$ for the disk and object and applying equation (9) below:
-\begin{equation}
-f_n = \frac{1}{T_n}
-\end{equation}
-
-The 
+A Trifilar is a simple apparatus used to determine an object's Mass Moment of Inertia. The device consists of a circular platform with some mass $m$, which is suspended by three wire filaments of length $L$. Filaments are placed at 120$^o$ separation from each other, at a distance of $r$ from the disk centre. An object is placed in the centre of the device to determine it's mass moment of interia. Figure 2 shows an unloaded Trifilar disk in a state of rotation.
 
 \begin{figure}[h]
 	\centering
@@ -168,14 +167,49 @@ The
 	\caption{A Trifilar is a simple apparatus used to determine the moment of inertia for different objects.}
 \end{figure}
 
+If the disk is given some initial rotational perturbation, the interaction between the weight of the disk $mg$, and the forces from the filaments $T$ cause a rotational motion. An expression for natural frequency of oscillation $f_n$ of the disk and object can be derived by considering the sum of forces in the vertical direction and the moments about the disk centre. The derivation is beyond the scope of this paper, however, the result can be seen in equation (9) below:
+\begin{equation}
+f_n = \frac{r}{2 \pi k} \sqrt{\frac{g}{L}}
+\end{equation}
+
+An object's moment of inertia is found by placing it on the disk, and perturbing the disk such that it only undergoes rotational motion, oscillating about the disk centre. Natural oscillation frequency can be determined by observing period of oscillation $T_n$ for the disk and object and applying equation (9) below:
+\begin{equation}
+f_n = \frac{1}{T_n}
+\end{equation}
+
+Rearranging (11), allows for the radius of gyration to be expressed as a function of $f_n$, $r$, and $L$:
+\begin{equation}
+k = \frac{r}{2 \pi f_n} \sqrt{\frac{g}{L}}
+\end{equation}
+
+Equating equations (9) and (13) allows us to solve for the mass moment of inertia about the mass centre:
+\begin{equation}
+	I = \frac{mg}{L} \bigg( \frac{r}{2 \pi f_n} \bigg)^2
+\end{equation}
+
 \newpage
 
 \subsection{Scope}
-
-
+This practical requires the Mass Moment of Inertia to be determined for various objects, using a trifilar. The first object is a wooden disk, which makes up part of the trifilar; and the second object is a small bolt like mass. The trifilar apparatus can be seen in Figure 3; and the bolt like mass is shown in Figure 4. To determine the Mass Moment of Inertia, the trifilar will be rotationally perturbed and natural periods of oscillation will be observed. Captured experimental data will be used to calculate the moment of inertia, which will then be compared to the theoretically derived results.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\frame{\includegraphics[scale=0.05]{scope_1}}
+		\caption{The trifilar rig consists of a wooden disk suspended by three filament wires. Masses can be placed in holes provided that are in the disk.}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\frame{\includegraphics[scale=0.05]{scope_2}}
+		\caption{The small mass that is placed in the holes cut out of the trifilar disk.}
+	\end{minipage}
+\end{figure}
 
 \section{Results}
-Experimental characteristics of the Trifilar were measured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; the radius from centre of disk to middle set of holes $R$; and the radius from the disk centre to the filament base $r$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 3.
+Dimensional measurements of the Trifilar were captured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; the radius from centre of disk to inner set of holes $d_1$ the radius from centre of disk to middle set of holes $d_2$; the radius from centre of disk to outer set of holes $d_3$; and the radius from the disk centre to the filament base $r$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 3.
+
+\vspace{0.15cm}
 
 \begin{figure}[h]
 	\centering
@@ -189,15 +223,17 @@ Experimental characteristics of the Trifilar were measured prior to undertaking 
 			Disk Mass $(m_d)$ & 0.200 & $\si{\kilogram}$\\
 			Disk Radius $(r_d)$ & 0.140 & $\si{\meter}$ \\
 			Filament Length $(L)$ & 0.450 & $\si{\meter}$ \\
-			Distance to Middle Holes $(R)$ & 0.090 & $\si{\meter}$\\
-			Distance to Filament $(r)$ &  & $\si{\meter}$ \\
+			Distance to Inner Holes $(d_1)$ & 0.090 & $\si{\meter}$\\
+			Distance to Middle Holes $(d_2)$ & 0.090 & $\si{\meter}$\\
+			Distance to Outer Holes $(d_3)$ & 0.090 & $\si{\meter}$\\
+			Distance to Filament $(r)$ & 0.049  & $\si{\meter}$ \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
 	\hspace{1cm}
 	\begin{minipage}{0.45\textwidth}
 		\centering
-		\captionof{table}{text}
+		\captionof{table}{Dimensions of the small masses}
 		\begin{tabular}{lrc}
 			\toprule
 			Description & Value & Units \\
@@ -207,6 +243,8 @@ Experimental characteristics of the Trifilar were measured prior to undertaking 
 			Upper Cylinder Height $(h_1)$ & 0.007 & $\si{\meter}$ \\
 			Lower Cylinder Radius $(r_2)$ & 0.090 & $\si{\meter}$ \\
 			Lower Cylinder Height $(h_2)$ & 0.007 & $\si{\meter}$ \\
+			 & & \\
+			 & & \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -239,9 +277,11 @@ Experimental characteristics of the Trifilar were measured prior to undertaking 
 	\caption{Geometries of the Trifilar disk and holes where small masses were mounted.}
 \end{figure}
 
-Measurement information was also taken about the small objects, which included their mass $m_{obj}$; radius of upper cylinder $r_1$; height of the upper cylinder $h_1$; radius of the lower cylinder $r_2$; and the height of the lower cylinder $h_2$. These measurements are presented in Table 2 above. The object geometries can be seen in Figure 4.
+\vspace{0.5cm}
 
+Measurement information was also taken about the small objects, including their mass $m_{obj}$; radius of upper cylinder $r_1$; height of the upper cylinder $h_1$; radius of the lower cylinder $r_2$; and the height of the lower cylinder $h_2$. These measurements are presented in Table 2 above. The object geometries can be seen in Figure 4.
 
+\vspace{0.5cm}
 
 \begin{figure}[h]
 	\centering
@@ -261,15 +301,22 @@ Measurement information was also taken about the small objects, which included t
 	\caption{The small objects are essentially a small cylinder stacked on top of a larger cylinder}
 \end{figure}
 
+\vspace{0.5cm}
+
+The trifilar was rotationally perturbed and allowed to oscillate. The time taken to complete 10 oscillations was recorded. This was repeated 5 times for both the disk, and the disk with mass objects placed in the middle holes. The tabulated results can be found in Table 3. Measurement error was reduced by taking an average of results for the disk, and for the disk plus objects. Average values can be found in the final column of Table 3. 
+
+\vspace{0.5cm}
+
 \begin{figure}[h]
 	\centering
-	\captionof{table}{text}
-	\begin{tabular}{lrrrrr}
+	\captionof{table}{Five trials were undertaken to record the natural period of oscillation for 10 oscillations. This was done for both the disk, and the disk plus mass objects in the middle holes}
+	\small
+	\begin{tabular}{lrrrrrr}
 		\toprule
-		Object & $(T_{10})_1$ & $(T_{10})_2$ & $(T_{10})_3$ & $(T_{10})_4$ & $(T_{10})_5$ \\
+		Object & $(T_{10})_1 \ [\si{\second}]$ & $(T_{10})_2 \ [\si{\second}]$ & $(T_{10})_3 \ [\si{\second}]$ & $(T_{10})_4 \ [\si{\second}]$ & $(T_{10})_5 \ [\si{\second}]$ & $(T_{10})_{avg} \ [\si{\second}]$ \\
 		\midrule
-		Disk & 31.91 & 31.50 & 30.97 & 30.82 & 30.78\\
-		Disk + 3 Objects (middle holes) & & & & & \\
+		Disk & 31.91 & 31.50 & 30.97 & 30.82 & 30.78 & 31.21\\
+		Disk + 3 Objects (middle) & 33.38 & 33.40 & 33.38 & 32.44 & 33.53 & 33.23 \\
 		\bottomrule
 	\end{tabular}
 \end{figure}
@@ -278,8 +325,14 @@ Measurement information was also taken about the small objects, which included t
 \newpage
 
 \section{Calculations}
+\subsection{Mass Moment of Inertia for Disk}
 
+\subsubsection{Disk experimental moment of inertia}
+\subsubsection{Disk theoretical moment of inertia}
 
+\subsection{Mass Moment of Inertia for Disk and Objects}
+\subsubsection{Disk and objects experimental moment of inertia}
+\subsubsection{Disk and objects theoretical moment of inertia}
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}
