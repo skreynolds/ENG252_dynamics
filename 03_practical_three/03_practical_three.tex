@@ -327,8 +327,8 @@ The trifilar was rotationally perturbed and allowed to oscillate. The time taken
 \newpage
 
 \section{Calculations}
-\subsection{Mass Moment of Inertia for Disk}
-\subsubsection{Disk experimental moment of inertia}
+\subsection{Moment of Inertia and Radius of Gyration for Disk}
+\subsubsection{Disk experimental moment of inertia and radius of gyration}
 Ten oscillations of the disk took an average time of 31.21$\si{\second}$, hence one oscillation took approximately 3.12$\si{\second}$. The natural frequency of oscillation, found using (12), is as follows:
 \begin{equation}
 f_n = \frac{1}{3.12} = 0.32\si{\hertz}
@@ -336,15 +336,15 @@ f_n = \frac{1}{3.12} = 0.32\si{\hertz}
 
 Using equation (13) the radius of gyration was calculated as:
 \begin{equation}
-k = \frac{0.049}{2 \pi \times 0.320}\sqrt{\frac{9.810}{0.450}} = 0.114\si{\meter}
+k_{tri} = \frac{0.049}{2 \pi \times 0.320}\sqrt{\frac{9.810}{0.450}} = 0.114\si{\meter}
 \end{equation}
 
 Using equation (14) the moment of inertia is calculated as:
 \begin{equation}
-I_G = 2.58 \times 10^{-3} \ \si{\kilogram\meter^2}
+(I_G)_{tri} = 2.58 \times 10^{-3} \ \si{\kilogram\meter^2}
 \end{equation}
 
-\subsubsection{Disk theoretical moment of inertia}
+\subsubsection{Disk theoretical moment of inertia and radius of gyration}
 Given that the mass of the disk is $m_d$, and letting the material area of the disk be $A$, we can specify the mass density by area for the disk material as:
 \begin{equation}
 	\rho_A = \frac{m_d}{A}
@@ -382,16 +382,88 @@ Substituting (21) and (22) into (23) and simplifying yields:
 (I_G)_{tri} = \rho_A \pi \bigg[ \frac{1}{2} r_d^2 - 5r_h^2 - 3r_h^2 (d_1^2 + d_2^2 + d_3^3) \bigg]
 \end{equation}
 
-\subsection{Mass Moment of Inertia for Disk and Objects}
-\subsubsection{Disk and objects experimental moment of inertia}
-Ten oscillations of the disk plus the three objects located in the middle holes took an average time of 33.23$\si{\second}$, hence one oscillation took approximately 3.23$\si{\second}$. Similarly to Section 3.1.1, the natural frequency of oscillation is found using (12) and is:
+Hence, substituting the values from Tables 1 and 2 into (24) yields:
 \begin{equation}
-f_n = 
+	(I_G)_{tri} = 2.56 \times 10^{-3} \ \si{\kilogram\meter^2}
 \end{equation}
 
-\subsubsection{Disk and objects theoretical moment of inertia}
+Finally, we can simply employ (9) to find the theoretical radius of gyration:
+\begin{equation}
+	k_{tri} = \sqrt{\frac{2.56 \times 10^{-3}}{0.2}} = 0.113 \si{\meter}
+\end{equation}
+
+\subsection{Moment of Inertia and Radius of Gyration for Disk and Objects}
+\subsubsection{Disk and objects experimental moment of inertia and radius of gyration}
+Ten oscillations of the disk plus the three objects located in the middle holes took an average time of 33.23$\si{\second}$, hence one oscillation took approximately 3.32$\si{\second}$. Similarly to Section 3.1.1, the natural frequency of oscillation is found using (12) and is:
+\begin{equation}
+f_n = \frac{1}{3.32} = 0.30\si{\hertz}
+\end{equation}
+
+Using equation (13) the radius of gyration was calculated as:
+\begin{equation}
+k_{tri\_and\_3\_obj} = \frac{0.049}{2 \pi \times 0.30}\sqrt{\frac{9.810}{0.450}} = 0.121\si{\meter}
+\end{equation}
+
+Using equation (14) the moment of inertia is calculated as:
+\begin{equation}
+(I_G)_{tri} + 3(I_O)_{obj} = 0.121^2 (0.2 + 3 \times 0.02) = 3.83 \times 10^{-3} \ \si{\kilogram\meter^2}
+\end{equation}
+
+\subsubsection{Disk and objects theoretical moment of inertia and radius of gyration}
+Given that the mass of one of the objects is $m_{obj}$, and letting the volume of the object be $V$, we can specify the mass density by volume for the objects as:
+\begin{equation}
+	\rho_V = \frac{m_{obj}}{V}
+\end{equation}
+
+We note that the volume can be calculated by considering the object as two small cylinders, which yields:
+\begin{equation}
+	V = \pi (r_1^2 h_1 + r_2^2 h_2)
+\end{equation}
+
+Additionally, considering the mass as two solid cylinders allows us to employ equation (20) to determine the moment of inertia about the axis through the mass centre for a single object:
+\begin{equation}
+	(I_G)_{obj} = \frac{1}{2} (\rho_V \pi r_1^2 h_1) r_1^2 + \frac{1}{2} (\rho_V \pi r_2^2 h_2) r_2^2 
+\end{equation}
+
+Simplifying equation (29) yields:
+\begin{equation}
+	(I_G)_{obj} = \frac{1}{2} \rho_V \pi (r_1^4 h_1 + r_2^4 h_2)
+\end{equation}
+
+Now, we want to determine the moment of inertia for the trifilar disk and the three mass objects. First we need to translate the result in (31) to a parallel axis. Using (8) we get:
+\begin{equation}
+	(I_O)_{obj} = (I_G)_{obj} + m_{obj} \times d_2^2
+\end{equation}
+
+Finally, using our theoretical result for the moment of inertia of the trifilar disk from Section 3.1.2, we can evaluate the moment of inertia for the disk plus three objects in the middle holes using the expression in (31). This yields:
+\begin{equation}
+	(I_G)_{tri} + 3(I_O)_{obj} = (I_G)_{tri} + 3 \big( (I_G)_{obj} + m_{obj} \times d_2^2 \big) = 3.06 \times 10^{-3} \ \si{\kilogram\meter^2}
+\end{equation}
+
+Finally, we can again employ (9) to determine the radius of gyration:
+\begin{equation}
+	k_{tri\_and\_3\_obj} = \sqrt{\frac{3.06 \times 10^{-3}}{0.2 + 3 \times 0.02}} = 0.108 \si{\meter}
+\end{equation}
 
 \section{Discussion}
+The experimental and theoretical results for the moments of inertia and radius of gyration calculated in Sections 3.1.1, 3.1.2, 3.2.1, and 3.2.2 are summarised in Table 4. Calculated results from experimental data are greater than theoretical values for the disk, but only marginally. Experimental moment of inertia for the disk is 0.78\% greater than the theoretical value. Similarly, the experimentally determined radius of gyration is 0.88\% greater than the theoretical result. The tiny differences in magnitude suggest that experimentally determining the moment of inertia and radius of gyration for the unloaded trifilar disk is reasonably accurate. Further, these differences are most likely explained by stochastic measurement error when timing the disk oscillations, or something similar.  
+\begin{table}[h]
+	\centering
+	\caption{Summary of the key results from Sections 3.1.1, 3.1.2, 3.2.1, and 3.2.2}
+	\begin{tabular}{lrrrrrr}
+		\toprule
+		& \multicolumn{3}{c}{Moment of Inertia} & \multicolumn{3}{c}{Radius of Gyration} \\
+		\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
+		Description & Experimental & Theoretical & Error & Experimental & Theoretical & Error\\
+		 & \multicolumn{1}{c}{$[\si{\kilogram\meter^2}]$} & \multicolumn{1}{c}{$[\si{\kilogram\meter^2}]$} & \multicolumn{1}{c}{$[\%]$} & \multicolumn{1}{c}{$[\si{\meter}]$} & \multicolumn{1}{c}{$[\si{\meter}]$} & \multicolumn{1}{c}{$[\%]$} \\ 
+		\midrule
+		Disk & $2.58 \times 10^{-3}$ & $2.56 \times 10^{-3}$ & 0.78 & 0.114 & 0.113 & 0.88 \\
+		Disk + 3 objects & $3.83 \times 10^{-3}$ & $3.06 \times 10^{-3}$ & 25.16 & 0.121 & 0.108 & 12.04\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Loading the disk's middle holes with three masses inflated the difference between experimental and theoretical values for the moment of inertia and radius of gyration. Indeed, the experimental moment of inertial was 25.16\% bigger than the theoretical value. Similarly, the experimental radius of gyration was 12.04\% bigger than the theoretical value. The increase in difference is most likely due to model error brought about as the system mass increases. Formulas used for the experimental calculations were derived by considering system forces which produced a second order, ordinary differential equation. The solution of this ode resulted in an undamped oscillatory response. Of course the reality of our rig violates this assumption since frictions on trifilar filaments would act as system dampners. It may be the case that an increase of mass also increases the friction on the filaments. 
 
 \section{Conclusion}
 
