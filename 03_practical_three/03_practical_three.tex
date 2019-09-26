@@ -98,17 +98,17 @@ The quantity $F$ is the scalar magnitude of the force acting orthogonal to the s
 	\begin{tikzpicture}
 		\shade[ball color=green!10!, rotate=-25] (0,0) coordinate(C) ellipse (2 and 1);
 		\fill[color=black] (1,-0.5) circle (0.05); 
-		\draw[rotate around={-25:(-3.5,1.75)}] (-3.5,1.75) -- (-3.5,4.5);
-		\draw[dashed, rotate around={-25:(-3.5,1.75)}] (-3.5,0) -- (-3.5,1.75);
-		\draw[->, color=blue, thick] (-3.5,1.75) -- (0.9546,-0.4788);
+		\draw[rotate around={-25:(-3.5,1.75)}] (-3.5,1.75) -- (-3.5,4.5) node[left] (1) {$O$};
+		\draw[dashed, rotate around={-25:(-3.5,1.75)}] (-3.5,0) node[left] (2) {$O'$} -- (-3.5,1.75);
+		\draw[->, color=blue, thick] (-3.5,1.75) -- (0.9546,-0.4788) node [midway, below] {$r$};
 		\draw [dashed, rotate around={-25:(-3.5,1.75)}] (-3.5,1.75) ellipse (5.04 and 2.2);
-		\draw [->, color=magenta, thick] (-0.75,-2.5) -- (0.9788,-0.545);
+		\draw [->, color=magenta, thick] (-0.75,-2.5) -- (0.9788,-0.545) node [midway, right] {$F_r = a_t \ dm$};
 		\node at (1.4,-0.5) {$dm$};
 	\end{tikzpicture}
 	\caption{A body of mass $m$ rotating about a fixed axis $OO'$ with some angular acceleration $\alpha$.}
 \end{figure}
 
-According to Giancoli a particle undergoing fixed axis rotation can re-express tangential acceleration $a_t$, as $\alpha r$, where $r$ is the distance from the centre of rotation to the particle. We can now rite (3) as:
+According to Giancoli \cite{Giancoli:2000} a particle undergoing fixed axis rotation can re-express tangential acceleration $a_t$, as $\alpha r$, where $r$ is the distance from the centre of rotation to the particle. We can now rite (3) as:
 \begin{equation}
 M_O = \alpha r \ dm \ r
 \end{equation}
@@ -118,7 +118,7 @@ This is convenient since $\alpha$ remains constant for all infinitesimally small
 \sum M_O = \alpha \int r^2 dm
 \end{equation}
 
-Equation (5) is often thought of as somewhat analogous to $\sum F = ma$, but for rotational motion. In fact since $\alpha$ is the angular acceleration, the integral in equation (5) is often referred to as the resistance of a body to change it's state of rotation. In the literature this quantity is denoted $I_O$ and referred to as the Moment of Inertia and is defined as:
+Equation (5) is often thought of as somewhat analogous to $\sum F = ma$, but for rotational motion. In fact since $\alpha$ is the angular acceleration, the integral in equation (5) is often referred to as the resistance of a body to change it's state of rotation. In the literature this quantity is denoted $I$ and referred to as the Moment of Inertia and is defined as:
 \begin{equation}
 I = \int r^2 dm
 \end{equation}
@@ -128,7 +128,7 @@ For a body with a uniform mass density $\rho$, we note that $dm = \rho dV$, wher
 I = \rho \int r^2 dV 
 \end{equation}
 
-Equation (7) is deceptively simple, however, the evaluation of $I$ can be fiendishly difficult for axes of rotation which do not pass through the body's centre of mass. In practice, (7) is typically only used to determine the moment of inertia through the body's mass centre, $I_G$. To find a moment of inertia around an axis that does not pass through the mass centre, the parallel axis theorem is often applied. The theorem derivation is beyond the scope of this paper, however, the result can be seen in equation (8).
+Equation (7) is deceptively simple, however, the evaluation of $I$ can be fiendishly difficult for axes of rotation which do not pass through the body's centre of mass. In practice, (7) is typically only used to determine the moment of inertia through the body's mass centre, $I_G$. To find a moment of inertia around an axis that does not pass through the mass centre, the parallel axis theorem is often applied. The theorem derivation is beyond the scope of this paper, however, the result can be seen in equation (8) \cite{Giancoli:2000}.
 \begin{equation}
 I_O = I_G + md^2
 \end{equation}
@@ -136,7 +136,7 @@ I_O = I_G + md^2
 Equation (8) tells us if the moment of inertia around an axis passing through the mass centre of a body $I_G$ is known, then the moment of inertia around any parallel axis $I_O$ is calculated with an additive translation of $I_G$ by the body mass $m$ multiplied by the square of orthogonal Euclidean distance between the two axes $d$.
 
 \subsection{Radius of Gyration}
-Meriam and Kraige define the radius of gyration $k$ as the radial distance from some axis of rotation such that if the whole mass of the body were concentrated to a point, then the moment of inertia about the given axis would be identical in value to the moment of inertia about the axis using the actual distribution of the body's mass. Mathematically, for some mass $m$, if $I_O$ is the moment of inertia about some axis $O$ then the radius of gyration is defined as:
+Meriam and Kraige \cite{Meriam:2000} define the radius of gyration $k$ as the radial distance from some axis of rotation such that if the whole mass of the body were concentrated to a point, then the moment of inertia about the given axis would be identical in value to the moment of inertia about the axis using the actual distribution of the body's mass. Mathematically, for some mass $m$, if $I_O$ is the moment of inertia about some axis $O$ then the radius of gyration is defined as:
 \begin{equation}
 k = \sqrt{\frac{I_O}{m}}
 \end{equation}
@@ -147,7 +147,7 @@ The radius of gyration has a similar parallel axes theorem as that seen for mome
 \end{equation}
 
 \subsection{Determining Moments of Inertia with a Trifilar}
-A Trifilar is a simple apparatus used to determine an object's Mass Moment of Inertia. The device consists of a circular platform with some mass $m$, which is suspended by three wire filaments of length $L$. Filaments are placed at 120$^o$ separation from each other, at a distance of $r$ from the disk centre. An object is placed in the centre of the device to determine it's mass moment of interia. Figure 2 shows an unloaded Trifilar disk in a state of rotation.
+A Trifilar is a simple apparatus used to determine an object's Mass Moment of Inertia. The device consists of a circular platform with some mass $m$, which is suspended by three wire filaments of length $L$. Filaments are placed at 120$^o$ separation from each other, at a distance of $r_F$ from the disk centre. An object is placed in the centre of the device to determine it's mass moment of interia. Figure 2 shows an unloaded Trifilar disk in a state of rotation.
 
 \begin{figure}[h]
 	\centering
@@ -156,35 +156,35 @@ A Trifilar is a simple apparatus used to determine an object's Mass Moment of In
 	\draw (-3,-0.25) arc (180:360:3 and 0.75);
 	\draw (-3,0) -- (-3,-0.25);
 	\draw (3,0) -- (3,-0.25);
-	\draw [dashed] (0,0) -- (0,3);
-	\draw [dashed] (0,0) -- (4,0);
-	\draw [dashed] (0,0) -- (1,0.5);
-	\draw [->, thick, color=magenta] (1,0.5) -- (1.5,2.5);
-	\draw [->, thick, color=magenta] (-1,0.5) -- (-0.5,2.5);
-	\draw [->, thick, color=magenta] (0,-0.5) -- (-0.5, 1.5);
-	\draw [->, thick, color=magenta] (0,-1) -- (0, -1.75);
+	\draw [dashed] (0,0) -- (0,3) node [right] {$y$};
+	\draw [dashed] (0,0) -- (4,0) node [above] {$x$};
+	\draw [dashed] (0,0) -- (1,0.5) node [midway, above] {$r_F$};
+	\draw [->, thick, color=magenta] (1,0.5) -- (1.5,2.5) node [midway, left] {$T$};
+	\draw [->, thick, color=magenta] (-1,0.5) -- (-0.5,2.5) node [midway, left] {$T$};
+	\draw [->, thick, color=magenta] (0,-0.5) -- (-0.5, 1.5) node [midway, left] {$T$};
+	\draw [->, thick, color=magenta] (0,-1) -- (0, -1.75) node [midway, right] {$mg$};
 	\end{tikzpicture}
 	\caption{A Trifilar is a simple apparatus used to determine the moment of inertia for different objects.}
 \end{figure}
 
-If the disk is given some initial rotational perturbation, the interaction between the weight of the disk $mg$, and the forces from the filaments $T$ cause a rotational motion. An expression for natural frequency of oscillation $f_n$ of the disk and object can be derived by considering the sum of forces in the vertical direction and the moments about the disk centre. The derivation is beyond the scope of this paper, however, the result can be seen in equation (9) below:
+If the disk is given some initial rotational perturbation, the interaction between the weight of the disk $mg$, and the forces from the filaments $T$ cause a rotational motion. An expression for natural frequency of oscillation $f_n$ of the disk and object can be derived by considering the sum of forces in the vertical direction and the moments about the disk centre. The derivation is beyond the scope of this paper, however, the result can be seen in equation (11) below:
 \begin{equation}
-f_n = \frac{r}{2 \pi k} \sqrt{\frac{g}{L}}
+f_n = \frac{r_F}{2 \pi k} \sqrt{\frac{g}{L}}
 \end{equation}
 
-An object's moment of inertia is found by placing it on the disk, and perturbing the disk such that it only undergoes rotational motion, oscillating about the disk centre. Natural oscillation frequency can be determined by observing period of oscillation $T_n$ for the disk and object and applying equation (9) below:
+An object's moment of inertia is found by placing it on the disk, and perturbing the disk such that it only undergoes rotational motion, oscillating about the disk centre. Natural oscillation frequency can be determined by observing period of oscillation $T_n$ for the disk and object and applying equation (12) below:
 \begin{equation}
 f_n = \frac{1}{T_n}
 \end{equation}
 
-Rearranging (11), allows for the radius of gyration to be expressed as a function of $f_n$, $r$, and $L$:
+Rearranging (11) allows for the radius of gyration to be expressed as a function of $f_n$, $r$, and $L$:
 \begin{equation}
-k = \frac{r}{2 \pi f_n} \sqrt{\frac{g}{L}}
+k = \frac{r_F}{2 \pi f_n} \sqrt{\frac{g}{L}}
 \end{equation}
 
-Equating equations (9) and (13) allows us to solve for the mass moment of inertia about the mass centre:
+Equating equations (12) and (13) allows us to solve for the mass moment of inertia about the mass centre:
 \begin{equation}
-	I = \frac{mg}{L} \bigg( \frac{r}{2 \pi f_n} \bigg)^2
+	I = \frac{mg}{L} \bigg( \frac{r_F}{2 \pi f_n} \bigg)^2
 \end{equation}
 
 \newpage
@@ -207,7 +207,7 @@ This practical requires the Mass Moment of Inertia to be determined for various 
 \end{figure}
 
 \section{Results}
-Dimensional measurements of the Trifilar were captured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; the radius from centre of disk to inner set of holes $d_1$ the radius from centre of disk to middle set of holes $d_2$; the radius from centre of disk to outer set of holes $d_3$; and the radius from the disk centre to the filament base $r$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 3.
+Dimensional measurements of the Trifilar were captured prior to undertaking the experiment. Measurements included disk weight $m_d$; disk radius $r_d$; filament length $L$; the radius from centre of disk to inner set of holes $d_1$ the radius from centre of disk to middle set of holes $d_2$; the radius from centre of disk to outer set of holes $d_3$; and the radius from the disk centre to the filament base $r$. These measurements are presented in Table 1 below. To better understand where the masses were mounted on the disk, the Trifilar disk geometries are shown in Figure 5.
 
 \begin{figure}[h]
 	\centering
@@ -226,7 +226,7 @@ Dimensional measurements of the Trifilar were captured prior to undertaking the 
 			Distance to Inner Holes $(d_1)$ & 0.065 & $\si{\meter}$\\
 			Distance to Middle Holes $(d_2)$ & 0.090 & $\si{\meter}$\\
 			Distance to Outer Holes $(d_3)$ & 0.120 & $\si{\meter}$\\
-			Distance to Filament $(r)$ & 0.049 & $\si{\meter}$ \\
+			Distance to Filament $(r_F)$ & 0.049 & $\si{\meter}$ \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}
@@ -240,10 +240,10 @@ Dimensional measurements of the Trifilar were captured prior to undertaking the 
 			Description & Value & Units \\
 			\midrule
 			Object Mass $(m_{obj})$ & 0.020 & $\si{\kilogram}$ \\
-			Upper Cylinder Radius $(r_1)$ & 0.009 & $\si{\meter}$ \\
-			Upper Cylinder Height $(h_1)$ & 0.007 & $\si{\meter}$ \\
-			Lower Cylinder Radius $(r_2)$ & 0.010 & $\si{\meter}$ \\
-			Lower Cylinder Height $(h_2)$ & 0.010 & $\si{\meter}$ \\
+			Upper Cylinder Radius $(r_u)$ & 0.009 & $\si{\meter}$ \\
+			Upper Cylinder Height $(h_u)$ & 0.007 & $\si{\meter}$ \\
+			Lower Cylinder Radius $(r_l)$ & 0.010 & $\si{\meter}$ \\
+			Lower Cylinder Height $(h_l)$ & 0.010 & $\si{\meter}$ \\
 			 & & \\
 			 & & \\
 			 & & \\
@@ -274,14 +274,18 @@ Dimensional measurements of the Trifilar were captured prior to undertaking the 
 	\draw (1.835,-0.4917) ellipse (0.5 and 0.2);
 	\draw (2.752,-0.7376) ellipse (0.5 and 0.2);
 	
-	\draw[<->, thick] (-5,-3) -- (5,-3);
+	\draw[<->, thick] (0,-3) -- (5,-3) node [midway, below] {$r_d$};
+	\draw[<->, thick] (0,-1) -- (0.5,-1) node [midway, below] {$r_h$};
+	\draw[<->, thick] (-2,0) -- (-2,0.5) node [midway, left] {$d_1$};
+	\draw[<->, thick] (-2,0.5) -- (-2,1) node [midway, left] {$d_2$};
+	\draw[<->, thick] (-2,1) -- (-2,1.5) node [midway, left] {$d_3$};
 	\end{tikzpicture}
 	\caption{Geometries of the Trifilar disk and holes where small masses were mounted.}
 \end{figure}
 
 \vspace{0.5cm}
 
-Measurement information was also taken about the small objects, including their mass $m_{obj}$; radius of upper cylinder $r_1$; height of the upper cylinder $h_1$; radius of the lower cylinder $r_2$; and the height of the lower cylinder $h_2$. These measurements are presented in Table 2 above. The object geometries can be seen in Figure 4.
+Measurement information was also taken about the small objects, including their mass $m_{obj}$; radius of upper cylinder $r_u$; height of the upper cylinder $h_u$; radius of the lower cylinder $r_l$; and the height of the lower cylinder $h_l$. These measurements are presented in Table 2 above. The object geometries can be seen in Figure 6.
 
 \vspace{0.5cm}
 
@@ -299,6 +303,11 @@ Measurement information was also taken about the small objects, including their 
 		\draw (1,0) -- (1,-1);
 		\draw (-2,-1) -- (-2,-2);
 		\draw (2,-1) -- (2,-2);
+		
+		\draw [<->, thick] (0,0.5) -- (1,0.5) node [midway, above] {$r_u$};
+		\draw [<->, thick] (0,-3) -- (2,-3) node [midway, below] {$r_l$};
+		\draw [<->, thick] (2.5,-2) -- (2.5,-1) node [midway, right] {$h_l$};
+		\draw [<->, thick] (2.5,0) -- (2.5,-1) node [midway, right] {$h_u$};
 	\end{tikzpicture}
 	\caption{The small objects are essentially a small cylinder stacked on top of a larger cylinder}
 \end{figure}
@@ -355,7 +364,7 @@ We note that the area can be calculated by subtracting 10 small holes from the t
 	A = \pi r_d^2 - 10 \pi r_h^2 = \pi (r_d^2 - 10 r_h^2)
 \end{equation}
 
-According to Meriam and Kraige the mass moment of inertia for a solid cylinder, with mass $M$ and radius $R$, about an axis running down the cylinder length through the mass centre is given by:
+According to Meriam and Kraige \cite{Meriam:2000} the mass moment of inertia for a solid cylinder, with mass $M$ and radius $R$, about an axis running down the cylinder length through the mass centre is given by:
 \begin{equation}
 I = \frac{1}{2}MR^2
 \end{equation}
@@ -417,25 +426,25 @@ Given that the mass of one of the objects is $m_{obj}$, and letting the volume o
 
 We note that the volume can be calculated by considering the object as two small cylinders, which yields:
 \begin{equation}
-	V = \pi (r_1^2 h_1 + r_2^2 h_2)
+	V = \pi (r_u^2 h_u + r_l^2 h_l)
 \end{equation}
 
 Additionally, considering the mass as two solid cylinders allows us to employ equation (20) to determine the moment of inertia about the axis through the mass centre for a single object:
 \begin{equation}
-	(I_G)_{obj} = \frac{1}{2} (\rho_V \pi r_1^2 h_1) r_1^2 + \frac{1}{2} (\rho_V \pi r_2^2 h_2) r_2^2 
+	(I_G)_{obj} = \frac{1}{2} (\rho_V \pi r_u^2 h_u) r_u^2 + \frac{1}{2} (\rho_V \pi r_l^2 h_l) r_l^2 
 \end{equation}
 
-Simplifying equation (29) yields:
+Simplifying equation (32) yields:
 \begin{equation}
-	(I_G)_{obj} = \frac{1}{2} \rho_V \pi (r_1^4 h_1 + r_2^4 h_2)
+	(I_G)_{obj} = \frac{1}{2} \rho_V \pi (r_u^4 h_u + r_l^4 h_l)
 \end{equation}
 
-Now, we want to determine the moment of inertia for the trifilar disk and the three mass objects. First we need to translate the result in (31) to a parallel axis. Using (8) we get:
+Now, we want to determine the moment of inertia for the trifilar disk and the three mass objects. First we need to translate the result in (33) to a parallel axis. Using (8) we get:
 \begin{equation}
 	(I_O)_{obj} = (I_G)_{obj} + m_{obj} \times d_2^2
 \end{equation}
 
-Finally, using our theoretical result for the moment of inertia of the trifilar disk from Section 3.1.2, we can evaluate the moment of inertia for the disk plus three objects in the middle holes using the expression in (31). This yields:
+Finally, using our theoretical result for the moment of inertia of the trifilar disk from Section 3.1.2, we can evaluate the moment of inertia for the disk plus three objects in the middle holes using the expression in (34). This yields:
 \begin{equation}
 	(I_G)_{tri} + 3(I_O)_{obj} = (I_G)_{tri} + 3 \big( (I_G)_{obj} + m_{obj} \times d_2^2 \big) = 3.06 \times 10^{-3} \ \si{\kilogram\meter^2}
 \end{equation}
@@ -463,10 +472,10 @@ The experimental and theoretical results for the moments of inertia and radius o
 	\end{tabular}
 \end{table}
 
-Loading the disk's middle holes with three masses inflated the difference between experimental and theoretical values for the moment of inertia and radius of gyration. Indeed, the experimental moment of inertial was 25.16\% bigger than the theoretical value. Similarly, the experimental radius of gyration was 12.04\% bigger than the theoretical value. The increase in difference is most likely due to model error brought about as the system mass increases. Formulas used for the experimental calculations were derived by considering system forces which produced a second order, ordinary differential equation. The solution of this ode resulted in an undamped oscillatory response. Of course the reality of our rig violates this assumption since frictions on trifilar filaments would act as system dampners. It may be the case that an increase of mass also increases the friction on the filaments. 
+Loading the disk's middle holes with three masses inflated the difference between experimental and theoretical values for the moment of inertia and radius of gyration. Indeed, the experimental moment of inertial was 25.16\% bigger than the theoretical value. Similarly, the experimental radius of gyration was 12.04\% bigger than the theoretical value. The increase in difference is most likely due to model error brought about as the system mass increases. Formulas used for the experimental calculations were derived by considering system forces which produced a second order, ordinary differential equation. The solution of this ode resulted in an undamped oscillatory response. Of course in reality the rig violates this assumption since frictions on trifilar filaments would act as system dampners. It may be the case that an increase of mass also increases the friction on filaments. 
 
 \section{Conclusion}
-
+The trifialr rig would work well for calculating moments of inertia and the radius of gyration for objects which do not changes the mass of the system very much, however, the rig only works semi-reliably for objects of 60$\si{g}$ of more. Experimentally calculated moments of inertia were 25\% greater than the theoretical values for a 60$\si{g}$ mass symmetrically distributed over the trifilar plate. Similarly, the experimentally calculated radius of gyration was 12\% greater than the theoretical value. The divergent results are most likely due to model error since there is an undamped oscillation assumption used in experimental calculations. Collection of more experimental values for different masses may help to identify a trend in the error. This future work may allow for the development of systematic correction factors which could be applied to get accurate moments of inertia and radius of gyration.     
 
 \bibliography{my_bib}
 \bibliographystyle{ieeetr}
