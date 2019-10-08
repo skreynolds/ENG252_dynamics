@@ -86,7 +86,7 @@ Torsional springs are capable of storing energy if they are displaced by some an
 The scope of this assignment is to use the stored energy in a mousetrap to move a wheeled vehicle 4.5$\si{\meter}$, deposit a load, and then travel back to the stating point.
 
 \section{Design}
-Basic strategy for vehicle mechanical operation was informed through online research - the most popular approach seemed to be a lever arm attached to the mousetrap. The lever arm is used to apply a moment to the drive shaft via the string, causing the wheels to turn as the mousetrap is de-energised. The overall vehicle construction can be seen in Figure 1. Figures 2 and 3 show a detailed view of the string wound onto the drive shaft; and the mousetrap with attached lever arm, respectively. The main alteration to researched designs involved attaching buffers to the drive shaft. This allowed for an increase in drive shaft torque on take off for both initial and return legs of vehicle excursion. Increased torque provides greater angular acceleration, which translates to increased linear acceleration. The string is wound such that once vehicle velocity is sufficient the string shifts back to the shaft ensuring enough rotation to traverse the required distance.
+Mechanical design of the vehicle was informed through online research - a popular approach employed a lever arm attached to the mousetrap. The lever arm applies a moment to the drive shaft via tensioned string, causing the wheels to turn as the mousetrap is de-energised. Complete vehicle construction can be seen in Figure 1. Figures 2 and 3 show a detailed view of the string wound onto the drive shaft; and the mousetrap with attached lever arm, respectively. The main alteration to researched designs saw buffers attached to the drive shaft to increase diameter. This allowed larger drive shaft torque on take off for both initial and return legs of vehicle excursion. Increased torque provides greater angular acceleration, yielding increased linear acceleration assuming no wheel slippage. String is wound around the increased diameter drive shaft such that once vehicle velocity is established the string shifts back to the original shaft size ensuring enough drive shaft rotations to traverse the required distance. The drive shaft set up can be seen in Figure 2.
 
 \begin{figure}[h]
 	\centering
@@ -142,9 +142,11 @@ Basic strategy for vehicle mechanical operation was informed through online rese
 	\end{minipage}
 \end{figure}
 
-Despite mass increases from the addition of buffers, the net result is a quicker round trip time. Drive shaft buffers were designed to be removed from shaft to allow for easy experimentation. A 3D model of a buffer section, created in SketchUp, can be seen in Figure 4. A further alteration was the inclusion of bearings to reduce friction on the drive shaft as it rotates. The net effect of this is to reduce the rolling friction of the vehicle, allowing less of the torsional spring potential energy to be lost to work against the rolling friction force. Information on the bearings can be found in Figure 9.
+Despite mass increases from the addition of drive shaft diameter buffers, the net result is quicker round trip times. Drive shaft buffers were designed to be removed from shaft to allow for easy experimentation. A 3D model of a buffer section, created in SketchUp, can be seen in Figure 4. Compact Discs (CDs) were used as wheels, fit with rubber balloon sections to the outside for increased traction. It was considered important to mount the wheels to shafts through their centre of mass - not doing this would increase the loss of energy to system vibration. Dowel shaft diameters were less than the size of inner CD holes so a custom mount was created ensure axes of rotation were precisely through the CD centre of mass. Figure 5 shows the CD wheels mounted to the shafts, and Figure 6 shows a 3D model of the wheel mounts created in SketchUp.\\
 
-Material choice for vehicle design was informed by rapid prototyping using aluminium L sections, timber, and balsa wood for the vehicle chassis.
+A further alteration was the inclusion of bearings to reduce rolling friction as the vehicle moves forward. The addition of bearings reduces torsional spring energy being lost to work against the rolling friction forces. Information on the bearings can be found in Figure 9. Bearings were mounted to the vehicle chassis using custom designed mounts shown in Figure 7. Additional information on the bearing mounts can be found in Figure 10. Material choices for vehicle design were informed by a rapid prototyping phase in which many different materials were experimented with including aluminium L sections, timber, and balsa wood for the vehicle chassis. Further, both steel, timber, and balsa shafts were trialled. Finally, moving parts such as pulley systems manufactured with additive manufacturing were trialled too. During this rapid prototyping phase it became apparent that performance was greatly influenced by the amount of mass in the vehicle, given the small amount of energy available in the torsional spring. As a result of these findings, a decision was made to strip away all unnecessary moving parts (such as pulleys), and select only the most light weight materials for construction. Balsa was selected for the main chassis, shown in Figure 8. Timber dowels were chosen for the shafts as a compromise between strength and mass, shown in Figure 12. CDs were selected for wheels, as shown in Figure 11. Lightweight custom plastic parts were designed and created using additive manufacturing where possible.
+
+\vspace{1cm}
 
 \begin{figure}[h]
 	\centering
@@ -160,6 +162,8 @@ Material choice for vehicle design was informed by rapid prototyping using alumi
 		\caption{Small plastic mounts designed to house the bearings and attach them securely to the vehicle chassis.}
 	\end{minipage}
 \end{figure}
+
+\vspace{1cm}
 
 \begin{figure}[h]
 	\centering
@@ -289,11 +293,135 @@ Material choice for vehicle design was informed by rapid prototyping using alumi
 \section{Machine Dynamics}
 \subsection{Theoretical Rolling Friction}
 
-\subsection{Theoretical Rotational Inertia of Wheels and Shaft}
+Rolling friction is the friction experienced by a round body when it rolls across a surface \cite{Giancoli:2000}. A rough approximation of the rolling friction coefficient, $\mu_{rf}$, was obtained by placing the vehicle on a flat surface and lifting one end of that surface until the vehicle just starts to move. The experiment set up is shown in Figure 15. Figure 14 shows that if the flat surface length $L$ is known, and the height $h$ is measured just as the vehicle starts to move then $\theta$ can be determined as:
+\begin{equation}
+	\theta = \arctan \big( \sfrac{h}{L} \big)
+\end{equation}
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw (0,0) -- (4,0);
+			\draw (0,0) -- (4,2);
+			\draw[dashed, rotate=26.56] (0,1) -- (1,1);
+			\draw[dashed, rotate=26.56] (0,1) -- (0,2);
+			\draw[rotate=26.56] (2,0) rectangle (3,1);
+			\draw[->, rotate=26.56, thick, color=magenta] (2.5,0.5) -- (2,-0.5);
+			\draw[->, rotate=26.56, thick, color=magenta] (1,0.2) -- (2,0.2);
+			\draw[->, rotate=26.56, thick, color=magenta] (2.5,-1) -- (2.5,0);
+			\draw[<->, thick] (4.2, 0) -- (4.2, 2);
+			\draw[<->, thick, rotate=26.56] (0,2.5) -- (4.47,2.5);
+		\end{tikzpicture}
+		\caption{The horizontal surface is raised on an incline until the point at which the vehicle just begins to move. The include angle and vehicle mass is used to derive an expression for the coefficeint of rolling friction.}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\frame{\includegraphics[height=5cm]{rolling_friction}}
+		\caption{Since bearings were used to reduce rolling friction, the angle of incline is very small as shown here.}
+	\end{minipage}
+\end{figure}
+
+Assuming the vehicle does not pass through the inclined surface, we note that:
+\begin{equation}
+	 + \uparrow \sum \boldsymbol{F}_y = 0
+\end{equation}
+
+Solving (3) for $F_N$ yields:
+\begin{equation}
+	F_N = mg \cos \bigg( \arctan \big( \sfrac{h}{L} \big) \bigg)
+\end{equation}
+
+Similarly, assuming that the vehicle is on the edge of static equilibrium right before it moves allows us to write:
+\begin{equation}
+	\stackrel{+}\rightarrow \sum \boldsymbol{F}_x = 0
+\end{equation}
+
+Noting that $F{rf} = \mu_{rf} F_N$ we can re-express (5) as:
+\begin{equation}
+	\mu_{rf} F_N = mg \sin \bigg( \arctan\big( \sfrac{h}{L} \big) \bigg)
+\end{equation}
+
+Dividing equation (6) by equation (5) yields:
+\begin{equation}
+	\mu_{rf} = \frac{h}{L}
+\end{equation}
+
+Given the length $L$ was measured at 0.75$\si{\meter}$, and the height $h$ was recorded as $8 \times 10^{-3} \si{\meter}$ the coefficient of rolling friction was calculated as:
+\begin{equation}
+	\mu_{rf} = 0.011
+\end{equation}
+
 
 \subsection{Spring Coefficient and Potential Energy}
+Giancoli defines the moment $M$ created by a torsional spring, for some angle of twist $\theta$ from it's equilibrium position, as:
+\begin{equation}
+	M = -\kappa \theta
+\end{equation} 
 
-\subsection{title}
+We note that $\kappa$ is the spring's torsion coefficient, which is also used to determine the potential energy of a torsional spring according to equation (1). To experimentally determine $\kappa$ for the mousetrap spring, the mousetrap was secured to a bench, and pulley fixed to the trap arm, as shown in Figure 16. Successively greater masses were loaded onto the pulley and the angle $\theta$ was measured for each mass. The pulley redirects the force due to gravity $mg$ so it is orthogonal along the arm of the mousetrap. The moment for each mass loading was calculated using equation (9). The experimental data is presented in Table 2.
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.35\textwidth}
+		\centering
+		\frame{\includegraphics[height=6.5cm]{spring_coeff}}
+		\caption{Experimental setup to determine the mousetrap's torsional spring coefficient.}
+	\end{minipage}
+	\hspace{0.45cm}
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\captionof{table}{Experimental data captured by loading increasingly larger masses onto the pulley system and measuring the angle of twist from the spring equilibrium position.}
+		\begin{tabular}{rrrr}
+			\toprule
+			Mass $[\si{\kilogram}]$ & Force $[\si{\newton}]$ & Moment $[\si{\newton\meter}]$ & Angle $[\si{\radian}]$ \\
+			\midrule
+			0.00 & 0.00 & 0.00 & 0.00 \\
+			0.09 & 0.84 & 0.03 & 0.15 \\
+			0.94 & 0.92 & 0.04 & 0.20 \\
+			0.12 & 1.22 & 0.05 & 0.25 \\
+			0.22 & 2.18 & 0.09 & 0.52 \\
+			0.27 & 2.65 & 0.11 & 0.85 \\
+			0.54 & 5.32 & 0.21 & 1.57 \\
+			0.61 & 5.95 & 0.24 & 1.89 \\
+			0.71 & 7.00 & 0.28 & 2.29 \\ 
+			\bottomrule
+		\end{tabular}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=$\theta \ (\si{\radian})$,
+	ylabel=$M \ (\si{\newton\meter})$]
+	
+	\addplot[only marks] coordinates {
+		(0.00, 0.00)
+		(0.15, 0.03)
+		(0.20, 0.04)
+		(0.25, 0.05)
+		(0.52, 0.09)
+		(0.85, 0.11)
+		(1.57, 0.21)
+		(1.89, 0.24)
+		(2.29, 0.28)
+	};
+	
+	\addplot[no marks, blue, domain=0:2.5] {0.13*x};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Angular measurements were plotted against calculated moments in order to determine the torsional spring coefficient. Linear regression was employed to fit a straight line model of equation (9) to the data.}
+\end{figure}
+
+Angular measurements were plotted against calculated moments, as shown in Figure 17. Linear regression was used to fit a straight line model, forced through the origin, to the data. We note that this model is is experimentally representative of equation (9), for the torsional spring on the mousetrap. The equation was reported as:
+\begin{equation}
+	M = 0.13 \ \theta \ \si{\newton\meter}
+\end{equation}
+
+We note that the torsion spring coefficient is 0.13 $\si{\newton\meter\per\radian}$
 
 \section{Distance Estimation}
 
@@ -303,9 +431,5 @@ Material choice for vehicle design was informed by rapid prototyping using alumi
 
 \bibliography{my_bib}
 \bibliographystyle{ieeetr}
-
-\newpage
-
-\section{Appendix A - Datasheet}
 
 \end{document}
