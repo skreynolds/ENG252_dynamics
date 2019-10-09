@@ -293,9 +293,9 @@ A further alteration was the inclusion of bearings to reduce rolling friction as
 \section{Machine Dynamics}
 \subsection{Theoretical Rolling Friction}
 
-Rolling friction is the friction experienced by a round body when it rolls across a surface \cite{Giancoli:2000}. A rough approximation of the rolling friction coefficient, $\mu_{rf}$, was obtained by placing the vehicle on a flat surface and lifting one end of that surface until the vehicle just starts to move. The experiment set up is shown in Figure 15. Figure 14 shows that if the flat surface length $L$ is known, and the height $h$ is measured just as the vehicle starts to move then $\theta$ can be determined as:
+Rolling friction is the friction experienced by a round body when it rolls across a surface \cite{Giancoli:2000}. A rough approximation of the rolling friction coefficient, $\mu_{rf}$, was obtained by placing the vehicle on a flat surface and lifting one end of that surface until the vehicle just starts to move. The experiment set up is shown in Figure 15. Figure 14 shows that if the flat surface length $L$ is known, and the height $h$ is measured just as the vehicle starts to move then $\beta$ can be determined as:
 \begin{equation}
-	\theta = \arctan \big( \sfrac{h}{L} \big)
+	\beta = \arcsin \big( \sfrac{h}{L} \big)
 \end{equation}
 \begin{figure}[h]
 	\centering
@@ -304,14 +304,15 @@ Rolling friction is the friction experienced by a round body when it rolls acros
 		\begin{tikzpicture}
 			\draw (0,0) -- (4,0);
 			\draw (0,0) -- (4,2);
-			\draw[dashed, rotate=26.56] (0,1) -- (1,1);
-			\draw[dashed, rotate=26.56] (0,1) -- (0,2);
+			\draw (1.25,0) arc (0:26.56:1.25cm) node [midway, left, yshift=-0.05cm] {$\beta$};
+			\draw[dashed, rotate=26.56] (0,1) -- (1,1) node[at end, below] {$x$};
+			\draw[dashed, rotate=26.56] (0,1) -- (0,2) node[near end, left] {$y$};;
 			\draw[rotate=26.56] (2,0) rectangle (3,1);
-			\draw[->, rotate=26.56, thick, color=magenta] (2.5,0.5) -- (2,-0.5);
-			\draw[->, rotate=26.56, thick, color=magenta] (1,0.2) -- (2,0.2);
-			\draw[->, rotate=26.56, thick, color=magenta] (2.5,-1) -- (2.5,0);
-			\draw[<->, thick] (4.2, 0) -- (4.2, 2);
-			\draw[<->, thick, rotate=26.56] (0,2.5) -- (4.47,2.5);
+			\draw[->, rotate=26.56, thick, color=magenta] (2.5,0.5) -- (2,-0.5) node[at end, left] {$mg$};
+			\draw[->, rotate=26.56, thick, color=magenta] (1,0.2) -- (2,0.2) node[near start, above] {$F_{rf}$};
+			\draw[->, rotate=26.56, thick, color=magenta] (2.5,-1) -- (2.5,0) node[midway, right] {$F_N$};
+			\draw[<->, thick] (4.2, 0) -- (4.2, 2) node[midway, right] {$h$};
+			\draw[<->, thick, rotate=26.56] (0,2.5) -- (4.47,2.5) node[midway, above, rotate=26.56] {$L$};
 		\end{tikzpicture}
 		\caption{The horizontal surface is raised on an incline until the point at which the vehicle just begins to move. The include angle and vehicle mass is used to derive an expression for the coefficeint of rolling friction.}
 	\end{minipage}
@@ -330,7 +331,7 @@ Assuming the vehicle does not pass through the inclined surface, we note that:
 
 Solving (3) for $F_N$ yields:
 \begin{equation}
-	F_N = mg \cos \bigg( \arctan \big( \sfrac{h}{L} \big) \bigg)
+	F_N = mg \cos \bigg( \arcsin \big( \sfrac{h}{L} \big) \bigg)
 \end{equation}
 
 Similarly, assuming that the vehicle is on the edge of static equilibrium right before it moves allows us to write:
@@ -340,12 +341,12 @@ Similarly, assuming that the vehicle is on the edge of static equilibrium right 
 
 Noting that $F{rf} = \mu_{rf} F_N$ we can re-express (5) as:
 \begin{equation}
-	\mu_{rf} F_N = mg \sin \bigg( \arctan\big( \sfrac{h}{L} \big) \bigg)
+	\mu_{rf} F_N = mg \sin \bigg( \arcsin\big( \sfrac{h}{L} \big) \bigg)
 \end{equation}
 
 Dividing equation (6) by equation (5) yields:
 \begin{equation}
-	\mu_{rf} = \frac{h}{L}
+	\mu_{rf} = \tan \bigg( \arcsin\big( \sfrac{h}{L} \big) \bigg)
 \end{equation}
 
 Given the length $L$ was measured at 0.75$\si{\meter}$, and the height $h$ was recorded as $8 \times 10^{-3} \si{\meter}$ the coefficient of rolling friction was calculated as:
@@ -424,24 +425,171 @@ Angular measurements were plotted against calculated moments, as shown in Figure
 We note that the torsion spring coefficient is 0.13 $\si{\newton\meter\per\radian}$.
 
 \section{Distance Estimation}
+There are three stages that are considered for vehicle motion. Stage 1 sees the vehicle released from the starting position with a fully energised mousetrap. The string has been wound onto the shaft in a particular direction. The mousetrap de-energises partially, creating kinetic energy, taking the vehicle (and cup) most of the first 4.5$\si{\meter}$ leg of the trip. Stage 2 sees the vehicle's kinetic energy from Stage 1 converted back to potential energy as motion is arrested, and string is wound back onto the shaft. Stages 1 and 2 complete the first 4.5$\si{\meter}$ leg. Finally Stage 3 has the string wound onto the shaft in the opposite direction to Stage 1, and uses the remaining potential energy (plus any energy obtained from Stage 2) to complete the return 4.5m journey. Figure 18 shows Stages 1, 2, and 3 pictorially over the 9m trip, and Figure 19 provides illustration of how the string is wound onto the shaft for Stages 1 and 3.
 
-\subsection{Stage 1}
-The string will be wound around the drive shaft such that the discharge for the first leg would see angular displacement of the torsional spring transition from $\pi$ to $\sfrac{\pi}{2}$. In order to decrease the time taken for this discharge two wraps around the high torque drive shaft buffer were
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\node[circle,ultra thick, fill=blue!20, minimum size=0.75cm] (1) at (0,0.5) {1};
+			\node[circle,ultra thick, fill=blue!20, minimum size=0.75cm] (2) at (-4,0.5) {2};
+			\node[circle,ultra thick, fill=blue!20, minimum size=0.75cm] (2a) at (-5.5,0.5) {$2'$};
+			\node[circle,ultra thick, fill=blue!20, minimum size=0.75cm] (3) at (0,1.5) {3};
+			
+			\draw[->, thick] (0,0) -- (-4,0) node[midway,below] {Stage 1};
+			\draw[->, thick] (-4,0) -- (-5.5,0) node[midway,below] {Stage 2};
+			\draw[->, thick] (-5.5,1) -- (0,1) node[midway,above] {Stage 3};
+			
+			\draw[<->, thick, blue] (-5.5,-1.5) -- (0,-1.5) node[midway,above] {4.5m};
+			\draw[blue] (-5.5,-1.55) -- (-5.5,-0.1);
+			\draw[blue] (0,-1.55) -- (0,-0.1);
+			
+		\end{tikzpicture}
+		\caption{An approximate picture of the ideal situation in which the vehicle travels some distance under the power of the first winding during Stage 1 (from 1 to 2). The kinetic energy takes the vehicle to 4.5m during Stage 2 (from 2 to $2'$), where kinetic energy is converted back to elastic potential. Finally, during Stage 3 (from $2'$ to 3), the remaining potential energy returns the car to the original position.}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw (1,0) -- (2.5,0);
+			\draw (1,1) -- (2.5,1);
+			
+			\draw (1,0) -- (1,1);	
+			
+			\draw (2.5,-1) -- (2.5,2);
+			\draw (3.5,-1) -- (3.5,2);
+			
+			\draw (2.5,2) -- (3.5,2);
+			\draw (2.5,-1) -- (3.5,-1);
+			
+			\draw (3.5,0) -- (5,0);
+			\draw (3.5,1) -- (5,1);
+			
+			\draw (5,-1) -- (5,2);
+			\draw (6,-1) -- (6,2);
+			
+			\draw (5,2) -- (6,2);
+			\draw (5,-1) -- (6,-1);
+			
+			\draw (6,0) -- (7.5,0);
+			\draw (6,1) -- (7.5,1);
+			
+			\draw (7.5,0) -- (7.5,1);
+			
+			\draw[->, thick, magenta] (5.5,-1.5) to[out=80, in=-80] (5.5,2.5);
+			\draw[->, thick, magenta] (4.25,-0.5) to[out=80, in=-80] (4.25,1.5);
+			\draw[<-, thick, magenta] (3,-1.5) to[out=80, in=-80] (3,2.5);
+			\draw[<-, thick, magenta] (1.75,-0.5) to[out=80, in=-80] (1.75,1.5);
+			
+			\draw[decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+			(3.75,-1.5) -- (6.5,-1.5) node [black,midway,below,yshift=-0.5cm] {\footnotesize
+				Stage 1};
+			
+			\draw[decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+			(1,-1.5) -- (3.75,-1.5) node [black,midway,below,yshift=-0.5cm] {\footnotesize
+				Stage 3};
+			
+		\end{tikzpicture}
+		\caption{A diagram of the shaft indicating the direction of the string windings onto the shaft. Stage 1 in one direction to make the first 4.5m leg of the trip, and Stage 3 in the opposite direction to make the final leg of the trip.}
+	\end{minipage}
+\end{figure}
 
-\subsection{Stage 2}
+\subsection{Stage 1 (From 1 to 2)}
+The string will be wound around the drive shaft, as per Figure 19. There will be 3 winds on the large shaft section, and 10 winds on the small shaft section. This means that when the Stage 1 windings are discharged, the vehicle would have travelled a distance, $d_1$, evaluated as:
+\begin{equation}
+	d_1 = 13 \times C_{wheel} = 13 \times \pi \ 0.12 = 4.9\si{\meter}
+\end{equation}
 
-\subsection{Stage 3}
+This should be just enough to get the entire length of the vehicle (approx 0.4m) over the 4.5m line. The amount of string unwound, $(d_{s})_1$, during Stage 1 is:
+\begin{align}
+	(d_{s})_1 	&= 3 \times C_{big} + 10 \times C_{small} + \epsilon \nonumber \\
+				&= 3 \times \pi D_{big}  + 10 \times \pi D_{small} + \epsilon \nonumber \\
+				&= 3 \times \pi \ 0.022  + 10 \times \pi \ 7.65 \times 10^{-3} + 0.1 \nonumber \\
+				&= 0.55\si{\meter}
+\end{align} 
+
+Note that $\epsilon$ is the result of the string transitioning once from large shaft section to small shaft section, and then back again. The resulting angular displacement of the spring at the end of Stage 1 can be found by considering Figure 20. The thick black line is the lever arm, and the magenta line is the amount of string that has wound off of the drive shaft.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\draw[dotted] (0,0) -- (-5,0) node[midway,below] {0.4m};
+		\draw[dashdotted] (0,0) -- (3,0);
+		\draw[rotate=-40, thick] (0,0) -- (-5,0) node[midway,above, rotate=-40] {0.4m};
+		\draw[magenta] (-5,0) -- (-3.83,3.21) node[midway,left] {0.55m};
+		\draw[dashed] (0,0) -- (-4.41,1.605);
+		\draw[<->, thick] (-1.52cm,1.29cm) arc (140:160:2cm) node [midway, xshift=0.25cm, yshift=-0.2cm] {$\sfrac{\alpha}{2}$};
+		\draw[<->, thick] (0.5cm,0) arc (0:140:0.5cm) node [midway, below] {$\theta_1$};
+		
+	\end{tikzpicture}
+	\caption{At the end of Stage 1 0.55m of string has been wound off of the drive shaft - this is show in magenta. Conveniently, the lever arm is the same distance from the centre of the trap to the drive shaft making it easy to calculate $\theta$.}
+\end{figure}
+
+Given that $\theta_1 + \alpha = \pi$, we note that we can determine $\theta_1$ as follows:
+\begin{equation}
+	\theta_1 = \pi - 2 \times \arcsin \bigg( \frac{\sfrac{0.55}{2}}{0.4} \bigg) = 1.63\si{\radian}
+\end{equation}
+
+Conservation of mechanical energy allows us to write:
+\begin{equation}
+	(V_s)_1 + T_1 + U'_{1-2} = (V_s)_2 + T_2
+\end{equation}
+
+We know that the vehicle is initially at rest, and hence $T_1 = 0\si{\joule}$. The mousetrap spring is energised at an angular displacement of $\pi$, and finishes Stage 1 at an angular displacement of 1.63$\si{\radian}$. Work is done over the Stage 1 distance as the vehicle is moved against the rolling friction force. Using equation (14) with values from (8), (10), and (11) we can determine the kinetic energy of the vehicle at the end of Stage 1:
+\begin{equation}
+	T_2 = (V_s)_1 - (V_s)_2 - d_1 (\mu_{rf} \ mg) = 0.37\si{\joule}
+\end{equation}
+
+\subsection{Stage 2 (From 2 to 2$'$)}
+During Stage 2, motion is arrested as kinetic energy at the end of Stage 1 is converted to elastic potential energy by winding up the torsional spring. We note that:
+\begin{equation}
+	(V_s)_2 + T_2 + U'_{2-2'} = (V_s)_{2'} + T_{2'}
+\end{equation}
+
+At the end of Stage 2 (i.e. $2'$) the vehicle is at rest implying that $T_{2'} = 0\si{\joule}$. Assuming the distance from 2 to $2'$ is small then $U'_{2-2'} \approx 0\si{\joule}$. Hence, we can determine an approximation for the potential energy for Stage 3 as:
+\begin{equation}
+	(V_s)_{2'} = (V_s)_2 + T_2 = \frac{1}{2} \times 0.13 \times 1.63^2 + 0.37 = 0.54\si{\joule}
+\end{equation}
+
+\subsection{Stage 3 (From 2$'$ to 3)}
+Finally, to find the final distance travelled during Stage 3, we assume all remaining potential energy in the spring will be discharged, and both the initial and final states of the vehicle is at rest, hence $T_{2'} = T_3 = 0 \si{\joule}$. Letting $d_3$ be the final distance travelled, we note that:
+\begin{equation}
+	(V_s)_{2'} - d_3 \ \mu_{rf} \ mg = 0
+\end{equation}
+
+Rearranging equation (18) allows us to solve for Stage 3 distance:
+\begin{equation}
+	d_3 = \frac{(V_s)_{2'}}{\mu_{rf} \ mg} = 27.04\si{\meter}
+\end{equation}
+
+Note the value in (19) would no doubt over estimate the final distance. Energy would have been lost to vehicle vibration in the Stage 1 and Stage 2. Additionally, the work done in Stage 2 was considered to be 0$\si{\joule}$ - this is not true and some energy would have been lost to rolling friction and not recovered by the torsional spring as assumed. Finally, since the cup was pushed the entire duration of Stage 1 and Stage 2 friction of the cup with the floor would increased coefficient of rolling friction - this last point would most likely have the greatest impact on the energy left to spend on the Stage 3 trip. Given these considerations, the real value of (19) would therefore be less than 27.04$\si{\meter}$.
+
 
 \section{Experimental Performance and Possible Improvements}
-The drive shaft string was wound as indicated in Sections 4.1, 4.2, and 4.3. The vehicle moved as predicted, however, the plastic cup load was buffeted about somewhat which may have resulted in vehicle vibration and increased friction forces due to unanticipated contact with the front wheels. Once the cup was delivered a distance of 4.5 $\si{\meter}$ in the first leg of the trip velocity was rapidly arrested, as the counter winding on the drive shaft buffer  and acceleration commenced towards A video of the vehicle performance can be seen in the url below:
+The drive shaft string was wound as indicated in Sections 4.1, 4.2, and 4.3. The vehicle moved as predicted, however, the plastic cup load was buffeted about somewhat which may have led to increased vehicle vibration and increased friction forces due to unanticipated contact with the front wheels. At the end of Stage 1 the lever arm was at an angle of approximately 1.57$\si{\radian}$ as predicted. Once the cup was delivered a distance of approximately 4.9 $\si{\meter}$ the vehicle velocity was rapidly arrested as the counter winding on the drive shaft converted kinetic energy to potential energy, as per the Stage 2 prediction. The vehicle was able to easily traverse the final Stage 3 distance of 4.5$\si{\meter}$, and had considerable kinetic energy upon physically stopping the vehicle. If there was additional space on the track, the car would have most likely traversed another 5$\si{\meter}$, albeit slowly. This is approximately 10$\si{\meter}$ for the Stage 3 distance, which is less than the calculated 27.04$\si{\meter}$, as predicted. A video of the vehicle performance can be seen in the url below:
 \begin{center}
 	\url{https://youtu.be/c6lqrsZ5jxA}
 \end{center}
 
+The vehicle was released at 0.07 $\si{\second}$ into the video and completes the trip at 0.22 $\si{\second}$ into the video, resulting in a 15 $\si{\second}$ round trip time. Obviously reducing rolling friction by creating a lightweight mechanism to support the cup during Stages 1 and 2 would significantly improve performance of the vehicle. Additionally, further reducing the mass of the vehicle would also help. Other improvements that could have a minor improvement on performance include ensuring that the wheels are orthogonal with the ground, and more precise construction techniques.
 
+\begin{table}[h]
+	\centering
+	\caption{Recorded trip time to cover Stages 1, 2, and 3}
+	\begin{tabular}{lr}
+		\toprule
+		Description & Value \\
+		\midrule
+		Stage 1 Distance & ~4.9m \\
+		Round trip time & 15$\si{\second}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 
 \section{Conclusion}
+The potential energy stored in an energised mousetrap is more than enough to transport a small plastic load with a vehicle a distance of 4.5$\si{\meter}$, and then return to it's starting position. The two most important considerations when designing a vehicle suitable for this task is to reduce mass, and reduce friction. Further, using different sized shafts to increase angular acceleration on take off will result in shorter trip times at the expense of a small amount of energy during gear change.
 
 \bibliography{my_bib}
 \bibliographystyle{ieeetr}
