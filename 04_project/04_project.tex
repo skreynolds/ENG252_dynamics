@@ -86,7 +86,7 @@ Torsional springs are capable of storing energy if they are displaced by some an
 The scope of this assignment is to use the stored energy in a mousetrap to move a wheeled vehicle 4.5$\si{\meter}$, deposit a load, and then travel back to the stating point.
 
 \section{Design}
-Mechanical design of the vehicle was informed through online research - a popular approach employed a lever arm attached to the mousetrap. The lever arm applies a moment to the drive shaft via tensioned string, causing the wheels to turn as the mousetrap is de-energised. Complete vehicle construction can be seen in Figure 1. Figures 2 and 3 show a detailed view of the string wound onto the drive shaft; and the mousetrap with attached lever arm, respectively. The main alteration to researched designs saw buffers attached to the drive shaft to increase diameter. This allowed larger drive shaft torque on take off for both initial and return legs of vehicle excursion. Increased torque provides greater angular acceleration, yielding increased linear acceleration assuming no wheel slippage. String is wound around the increased diameter drive shaft such that once vehicle velocity is established the string shifts back to the original shaft size ensuring enough drive shaft rotations to traverse the required distance. The drive shaft set up can be seen in Figure 2.
+Mechanical design of the vehicle was informed through online research - a popular approach employed a lever arm attached to the mousetrap. The lever arm applies a moment to the drive shaft via tensioned string, causing the wheels to turn as the mousetrap is de-energised \cite{doc_fiz}. Complete vehicle construction can be seen in Figure 1. Figures 2 and 3 show a detailed view of the string wound onto the drive shaft; and the mousetrap with attached lever arm, respectively. The main alteration to researched designs saw buffers attached to the drive shaft to increase diameter. This allowed larger drive shaft torque on take off for both initial and return legs of vehicle excursion. Increased torque provides greater angular acceleration, yielding increased linear acceleration assuming no wheel slippage. String is wound around the increased diameter drive shaft just enough so that once vehicle velocity is established the string shifts back to the original shaft size ensuring enough drive shaft rotations to traverse the required distance. The drive shaft set up can be seen in Figure 2.
 
 \begin{figure}[h]
 	\centering
@@ -103,10 +103,10 @@ Mechanical design of the vehicle was informed through online research - a popula
 			\toprule
 			Measurement & Value & Unit \\
 			\midrule
-			Chassis Length & & \\
-			Chassis Width & & \\
-			Chassis Height & & \\
-			Mass & 0.180 & $\si{\kilogram}$ \\
+			Chassis Length & 0.45 & $\si{\meter}$ \\
+			Chassis Width & 0.07 & $\si{\meter}$ \\
+			Chassis Height & 0.09 & $\si{\meter}$ \\
+			Mass & 0.185 & $\si{\kilogram}$ \\
 			\bottomrule
 		\end{tabular}
 	\end{minipage}	
@@ -142,9 +142,9 @@ Mechanical design of the vehicle was informed through online research - a popula
 	\end{minipage}
 \end{figure}
 
-Despite mass increases from the addition of drive shaft diameter buffers, the net result is quicker round trip times. Drive shaft buffers were designed to be removed from shaft to allow for easy experimentation. A 3D model of a buffer section, created in SketchUp, can be seen in Figure 4. Compact Discs (CDs) were used as wheels, fit with rubber balloon sections to the outside for increased traction. It was considered important to mount the wheels to shafts through their centre of mass - not doing this would increase the loss of energy to system vibration. Dowel shaft diameters were less than the size of inner CD holes so a custom mount was created ensure axes of rotation were precisely through the CD centre of mass. Figure 5 shows the CD wheels mounted to the shafts, and Figure 6 shows a 3D model of the wheel mounts created in SketchUp.\\
+Despite mass increases from the addition of drive shaft diameter buffers, the net result should provide quicker round trip times. Drive shaft buffers were designed to be removed from shaft to allow for easy experimentation. A 3D model of a buffer section, created in SketchUp, can be seen in Figure 4. Compact Discs (CDs) were used as wheels, fit with rubber balloon sections to the outside for increased traction. It was considered important to mount the wheels to shafts through their centre of mass - not doing this would increase the loss of energy to system vibration. Dowel shaft diameters were less than the size of inner CD holes so a custom mount was created ensure axes of rotation were precisely through the CD centre of mass. Figure 5 shows the CD wheels mounted to the shafts, and Figure 6 shows a 3D model of the wheel mounts created in SketchUp.\\
 
-A further alteration was the inclusion of bearings to reduce rolling friction as the vehicle moves forward. The addition of bearings reduces torsional spring energy being lost to work against the rolling friction forces. Information on the bearings can be found in Figure 9. Bearings were mounted to the vehicle chassis using custom designed mounts shown in Figure 7. Additional information on the bearing mounts can be found in Figure 10. Material choices for vehicle design were informed by a rapid prototyping phase in which many different materials were experimented with including aluminium L sections, timber, and balsa wood for the vehicle chassis. Further, both steel, timber, and balsa shafts were trialled. Finally, moving parts such as pulley systems manufactured with additive manufacturing were trialled too. During this rapid prototyping phase it became apparent that performance was greatly influenced by the amount of mass in the vehicle, given the small amount of energy available in the torsional spring. As a result of these findings, a decision was made to strip away all unnecessary moving parts (such as pulleys), and select only the most light weight materials for construction. Balsa was selected for the main chassis, shown in Figure 8. Timber dowels were chosen for the shafts as a compromise between strength and mass, shown in Figure 12. CDs were selected for wheels, as shown in Figure 11. Lightweight custom plastic parts were designed and created using additive manufacturing where possible.
+A further alteration was the inclusion of bearings to reduce rolling friction as the vehicle moves forward. This change reduces the amount of torsional spring energy being lost to work against the rolling friction forces. Information on the bearings can be found in Figure 9. Bearings were mounted to the vehicle chassis using custom designed mounts shown in Figure 7. Additional information on the bearing mounts can be found in Figure 10. Material choices for vehicle design were informed by a rapid prototyping phase in which many different materials were experimented with including aluminium L sections, timber, and balsa wood for the vehicle chassis. Further, both steel, timber, and balsa shafts were trialled. Finally, moving parts, such as pulley systems, created with additive manufacturing were trialled too. During this rapid prototyping phase it became apparent that performance was greatly influenced by the amount of mass in the vehicle, given the small amount of energy available in the torsional spring. As a result of these findings, a decision was made to strip away all unnecessary moving parts (such as pulleys), and select only the most light weight materials for construction. Balsa was selected for the main chassis, shown in Figure 8. Timber dowels were chosen for the shafts as a compromise between strength and mass, shown in Figure 12. CDs were selected for wheels, as shown in Figure 11. Lightweight custom plastic parts were designed and created using additive manufacturing where possible.
 
 \vspace{1cm}
 
@@ -255,6 +255,7 @@ A further alteration was the inclusion of bearings to reduce rolling friction as
 			\toprule
 			Measurement & Value & Unit \\
 			\midrule
+			Diameter & 0.008 & $\si{\meter}$ \\
 			Length (Lever Arm) & 0.400 & $\si{\meter}$ \\
 			Length (Shaft) & 0.100 & $\si{\meter}$ \\
 			Mass (Lever Arm) & 0.011 & $\si{\si{\kilogram}}$ \\
@@ -339,7 +340,7 @@ Similarly, assuming that the vehicle is on the edge of static equilibrium right 
 	\stackrel{+}\rightarrow \sum \boldsymbol{F}_x = 0
 \end{equation}
 
-Noting that $F{rf} = \mu_{rf} F_N$ we can re-express (5) as:
+Noting that $F_{rf} = \mu_{rf} F_N$ we can re-express (5) as:
 \begin{equation}
 	\mu_{rf} F_N = mg \sin \bigg( \arcsin\big( \sfrac{h}{L} \big) \bigg)
 \end{equation}
@@ -361,7 +362,7 @@ Giancoli defines the moment $M$ created by a torsional spring, for some angle of
 	M = -\kappa \theta
 \end{equation} 
 
-We note that $\kappa$ is the spring's torsion coefficient, which is also used to determine the potential energy of a torsional spring according to equation (1). To experimentally determine $\kappa$ for the mousetrap spring, the mousetrap was secured to a bench, and pulley fixed to the trap arm, as shown in Figure 16. Successively greater masses were loaded onto the pulley and the angle $\theta$ was measured for each mass. The pulley redirects the force due to gravity $mg$ so it is orthogonal along the arm of the mousetrap. The moment for each mass loading was calculated using equation (9). The experimental data is presented in Table 2.
+We note that $\kappa$ is the spring's torsion coefficient, which is also used to determine the potential energy of a torsional spring according to equation (1). To experimentally determine $\kappa$ for the mousetrap spring, the mousetrap was secured to a bench, and pulley fixed to the trap arm, as shown in Figure 16. Successively greater masses were loaded onto the pulley and the angle $\theta$ was measured for each mass. The pulley redirects the force due to gravity, $mg$, so it is orthogonal along the mousetrap arm. Moments for each mass loading were calculated using equation (9). The experimental data is presented in Table 2.
 
 \begin{figure}[h]
 	\centering
@@ -425,7 +426,7 @@ Angular measurements were plotted against calculated moments, as shown in Figure
 We note that the torsion spring coefficient is 0.13 $\si{\newton\meter\per\radian}$.
 
 \section{Distance Estimation}
-There are three stages that are considered for vehicle motion. Stage 1 sees the vehicle released from the starting position with a fully energised mousetrap. The string has been wound onto the shaft in a particular direction. The mousetrap de-energises partially, creating kinetic energy, taking the vehicle (and cup) most of the first 4.5$\si{\meter}$ leg of the trip. Stage 2 sees the vehicle's kinetic energy from Stage 1 converted back to potential energy as motion is arrested, and string is wound back onto the shaft. Stages 1 and 2 complete the first 4.5$\si{\meter}$ leg. Finally Stage 3 has the string wound onto the shaft in the opposite direction to Stage 1, and uses the remaining potential energy (plus any energy obtained from Stage 2) to complete the return 4.5m journey. Figure 18 shows Stages 1, 2, and 3 pictorially over the 9m trip, and Figure 19 provides illustration of how the string is wound onto the shaft for Stages 1 and 3.
+There are three stages that are considered for vehicle motion. Stage 1 sees the vehicle released from the starting position with a fully energised mousetrap. The string has been wound onto the shaft in a particular direction. The mousetrap de-energises partially, creating kinetic energy, taking the vehicle (and cup) most of the way for the first 4.5$\si{\meter}$ leg of the trip. Stage 2 sees the vehicle's kinetic energy from Stage 1 converted back to potential energy as motion is arrested, and string is wound back onto the shaft. Stages 1 and 2 complete the first 4.5$\si{\meter}$ leg. Finally Stage 3 has the string wound onto the shaft in the opposite direction to Stage 1, and uses the remaining potential energy (plus any energy obtained from Stage 2) to complete the return 4.5m journey. Figure 18 shows Stages 1, 2, and 3 pictorially over the 9m trip, and Figure 19 provides illustration of how the string is wound onto the shaft for Stages 1 and 3.
 
 \begin{figure}[h]
 	\centering
@@ -536,18 +537,18 @@ Conservation of mechanical energy allows us to write:
 	(V_s)_1 + T_1 + U'_{1-2} = (V_s)_2 + T_2
 \end{equation}
 
-We know that the vehicle is initially at rest, and hence $T_1 = 0\si{\joule}$. The mousetrap spring is energised at an angular displacement of $\pi$, and finishes Stage 1 at an angular displacement of 1.63$\si{\radian}$. Work is done over the Stage 1 distance as the vehicle is moved against the rolling friction force. Using equation (14) with values from (8), (10), and (11) we can determine the kinetic energy of the vehicle at the end of Stage 1:
+We know that the vehicle is initially at rest, and hence $T_1 = 0\si{\joule}$. The mousetrap spring is energised at an angular displacement of $\pi$, and finishes Stage 1 at an angular displacement of 1.63$\si{\radian}$. Work is done over the Stage 1 distance as the vehicle is moved against the rolling friction force. Using equation (14) and (1) with values from (8), (10), and (11) we can determine the kinetic energy of the vehicle at the end of Stage 1:
 \begin{equation}
 	T_2 = (V_s)_1 - (V_s)_2 - d_1 (\mu_{rf} \ mg) = 0.37\si{\joule}
 \end{equation}
 
 \subsection{Stage 2 (From 2 to 2$'$)}
-During Stage 2, motion is arrested as kinetic energy at the end of Stage 1 is converted to elastic potential energy by winding up the torsional spring. We note that:
+During Stage 2 kinetic energy at the end of Stage 1 is converted to elastic potential energy by winding up the torsional spring as motion is arrested. We note that:
 \begin{equation}
 	(V_s)_2 + T_2 + U'_{2-2'} = (V_s)_{2'} + T_{2'}
 \end{equation}
 
-At the end of Stage 2 (i.e. $2'$) the vehicle is at rest implying that $T_{2'} = 0\si{\joule}$. Assuming the distance from 2 to $2'$ is small then $U'_{2-2'} \approx 0\si{\joule}$. Hence, we can determine an approximation for the potential energy for Stage 3 as:
+At the end of Stage 2 (i.e. $2'$) the vehicle is at rest implying that $T_{2'} = 0\si{\joule}$. Assuming the distance from 2 to $2'$ is small then $U'_{2-2'} \approx 0\si{\joule}$. Hence, we can determine an approximation for the potential energy for Stage 3 (i.e. the end of Stage 2) as:
 \begin{equation}
 	(V_s)_{2'} = (V_s)_2 + T_2 = \frac{1}{2} \times 0.13 \times 1.63^2 + 0.37 = 0.54\si{\joule}
 \end{equation}
@@ -563,16 +564,16 @@ Rearranging equation (18) allows us to solve for Stage 3 distance:
 	d_3 = \frac{(V_s)_{2'}}{\mu_{rf} \ mg} = 27.04\si{\meter}
 \end{equation}
 
-Note the value in (19) would no doubt over estimate the final distance. Energy would have been lost to vehicle vibration in the Stage 1 and Stage 2. Additionally, the work done in Stage 2 was considered to be 0$\si{\joule}$ - this is not true and some energy would have been lost to rolling friction and not recovered by the torsional spring as assumed. Finally, since the cup was pushed the entire duration of Stage 1 and Stage 2 friction of the cup with the floor would increased coefficient of rolling friction - this last point would most likely have the greatest impact on the energy left to spend on the Stage 3 trip. Given these considerations, the real value of (19) would therefore be less than 27.04$\si{\meter}$.
+Note the value in (19) would no doubt over estimate the final distance seen in reality. Energy would have been lost to vehicle vibration in Stage 1 and Stage 2. Additionally, the work done in Stage 2 was considered to be 0$\si{\joule}$ - this is not true and some energy would have been lost to rolling friction and not recovered by the torsional spring as assumed. Finally, since the cup was pushed the entire duration of Stage 1 and Stage 2, friction between the cup and the floor would increased coefficient of rolling friction. This last point would most likely have the greatest impact on the potential energy left to spend on Stage 3. Given these considerations, the real value of (19) would therefore be less than 27.04$\si{\meter}$.
 
 
 \section{Experimental Performance and Possible Improvements}
-The drive shaft string was wound as indicated in Sections 4.1, 4.2, and 4.3. The vehicle moved as predicted, however, the plastic cup load was buffeted about somewhat which may have led to increased vehicle vibration and increased friction forces due to unanticipated contact with the front wheels. At the end of Stage 1 the lever arm was at an angle of approximately 1.57$\si{\radian}$ as predicted. Once the cup was delivered a distance of approximately 4.9 $\si{\meter}$ the vehicle velocity was rapidly arrested as the counter winding on the drive shaft converted kinetic energy to potential energy, as per the Stage 2 prediction. The vehicle was able to easily traverse the final Stage 3 distance of 4.5$\si{\meter}$, and had considerable kinetic energy upon physically stopping the vehicle. If there was additional space on the track, the car would have most likely traversed another 5$\si{\meter}$, albeit slowly. This is approximately 10$\si{\meter}$ for the Stage 3 distance, which is less than the calculated 27.04$\si{\meter}$, as predicted. A video of the vehicle performance can be seen in the url below:
+The drive shaft string was wound as indicated in Section 4.1 for Stage 1. The remainder of the string allowed for 2 winds on the large shaft section, and 6 winds on the small shaft section for Stage 3. During execution of Stage 1, vehicle moved as predicted, however, the plastic cup load was buffeted about somewhat. This may have led to increased vehicle vibration and increased friction forces from unanticipated contact of the cup with drive wheels. At the end of Stage 1 the lever arm was at an angle of approximately 1.57$\si{\radian}$, which was similar to the predicted value of 1.63$\si{\radian}$. Once the cup was delivered a distance of approximately 4.9 $\si{\meter}$ the vehicle velocity was rapidly arrested as the counter winding on the drive shaft converted kinetic energy to potential energy, as per the Stage 2 prediction. The distance travelled during Stage 2 was small. The vehicle was able to easily traverse the final Stage 3 distance of 4.5$\si{\meter}$, and had considerable kinetic energy remaining when the vehicle was physically stopped. If there was additional space on the track, the vehicle would have most likely traversed another 5$\si{\meter}$, albeit slowly. Approximately 10$\si{\meter}$ would have been traversed during Stage 3, which is less than the calculated 27.04$\si{\meter}$, as predicted. A video of the vehicle performance can be seen in the url below:
 \begin{center}
 	\url{https://youtu.be/c6lqrsZ5jxA}
 \end{center}
 
-The vehicle was released at 0.07 $\si{\second}$ into the video and completes the trip at 0.22 $\si{\second}$ into the video, resulting in a 15 $\si{\second}$ round trip time. Obviously reducing rolling friction by creating a lightweight mechanism to support the cup during Stages 1 and 2 would significantly improve performance of the vehicle. Additionally, further reducing the mass of the vehicle would also help. Other improvements that could have a minor improvement on performance include ensuring that the wheels are orthogonal with the ground, and more precise construction techniques.
+The vehicle was released at 0.07 $\si{\second}$ into the video and completes the trip at 0.22 $\si{\second}$ into the video, resulting in a 15 $\si{\second}$ round trip time. Summarised values of the trial can be found in Table 3. After observing the vehicle in action it is apparent that reducing rolling friction by creating a lightweight mechanism to support the cup during Stages 1 and 2 would significantly improve vehicle performance. Additionally, further reduction of vehicle mass would also help. Other improvements that could have a minor improvement on performance include ensuring that the wheels are orthogonal with the ground to limit vibration when in motion; and more precise construction techniques to reduce rolling friction due to shaft misalignment.
 
 \vspace{1cm}
 
